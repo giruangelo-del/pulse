@@ -7,44 +7,91 @@
 <link rel="apple-touch-icon" href="icon-192.png">
 <style>
 :root{--bg:#f8fafc;--card:#fff;--tx:#0f172a;--mut:#64748b;--bd:#e2e8f0;--ac:#2563eb;--sb:#0b1120;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
-@media(prefers-color-scheme:dark){:root{--bg:#0f172a;--card:#1e293b;--tx:#f1f5f9;--mut:#94a3b8;--bd:#334155;--ac:#3b82f6}}
-body.burn{--bg:#faf9f6;--card:#fff;--tx:#292524;--mut:#78716c;--bd:#e7e5e4;--ac:#e11d48;--sb:#f5f5f4}
-*{box-sizing:border-box}body{margin:0;font:15px system-ui,-apple-system,Segoe UI,sans-serif;background:var(--bg);color:var(--tx);transition:background .4s}
+@media(prefers-color-scheme:dark){:root:not([data-theme=light]){--bg:#0f172a;--card:#1e293b;--tx:#f1f5f9;--mut:#94a3b8;--bd:#334155;--ac:#3b82f6}}
+:root[data-theme=dark]{--bg:#0f172a;--card:#1e293b;--tx:#f1f5f9;--mut:#94a3b8;--bd:#334155;--ac:#3b82f6}
+body.burn{--bg:#111214;--card:#1a1b1e;--tx:#d4d0cb;--mut:#8b8782;--bd:#2a2b2f;--ac:#8f8179;--sb:#0b0b0c}
+*{box-sizing:border-box}
+body{margin:0;font:15px system-ui,-apple-system,Segoe UI,sans-serif;background:var(--bg);color:var(--tx);transition:background .5s,color .5s;letter-spacing:-.005em;-webkit-tap-highlight-color:transparent}
+body.burn #m{filter:saturate(.2) brightness(.92)}
+body.burn main{animation:none}
 nav{position:fixed;bottom:0;left:0;right:0;display:flex;overflow-x:auto;background:var(--sb);padding:6px 4px calc(6px + env(safe-area-inset-bottom,0px));z-index:9;gap:2px}
-nav button{flex:1 0 64px;background:none;border:0;color:#94a3b8;font-size:11px;padding:6px 2px;border-radius:10px;cursor:pointer}
+nav button{flex:1 0 62px;background:none;border:0;color:#94a3b8;font-size:11px;padding:6px 2px;border-radius:10px;cursor:pointer}
 nav button b{display:block;font-size:20px;font-weight:400}nav button.on{background:var(--ac);color:#fff}
-body.burn nav button{color:#78716c}body.burn nav button.on{color:#fff}
-main{padding:16px 14px 100px;max-width:900px;margin:auto}
-h2{margin:4px 0 2px;font-size:26px}.sub{color:var(--mut);font-size:13px;margin-bottom:16px}
-.card{background:var(--card);border:1px solid var(--bd);border-radius:16px;padding:14px;margin-bottom:12px}
-.grid{display:grid;gap:12px;grid-template-columns:repeat(auto-fit,minmax(160px,1fr))}
+main{padding:16px 14px 110px;max-width:900px;margin:auto;animation:fi .25s ease}
+@keyframes fi{from{opacity:0;transform:translateY(6px)}to{opacity:1;transform:none}}
+@keyframes up{from{opacity:0;transform:translateY(10px)}to{opacity:1;transform:none}}
+h2{margin:4px 0 2px;font-size:26px}h3{margin:14px 0 8px}.sub{color:var(--mut);font-size:13px;margin-bottom:14px}
+.hd{display:flex;justify-content:space-between;align-items:flex-start;gap:8px}.hb{display:flex;gap:2px}
+.card{background:var(--card);border:1px solid var(--bd);border-radius:16px;padding:14px;margin-bottom:12px;box-shadow:0 1px 2px rgba(15,23,42,.04),0 4px 14px rgba(15,23,42,.05)}
+.grid{display:grid;gap:12px;grid-template-columns:repeat(auto-fit,minmax(150px,1fr))}
 .big{font-size:28px;font-weight:700}.mut{color:var(--mut);font-size:12px}
 input,select,textarea{width:100%;padding:11px;border-radius:10px;border:1px solid var(--bd);background:var(--bg);color:var(--tx);font:inherit;margin:4px 0 10px}
+input:focus,select:focus,textarea:focus{outline:none;border-color:var(--ac);box-shadow:0 0 0 3px color-mix(in srgb,var(--ac) 22%,transparent)}
 label{font-size:12px;color:var(--mut)}
-.btn{background:var(--ac);color:#fff;border:0;border-radius:10px;padding:11px 16px;font:inherit;font-weight:600;cursor:pointer}
-.btn.w{width:100%}.ic{background:none;border:0;font-size:18px;cursor:pointer;color:var(--mut);padding:6px}
-.row{display:flex;align-items:center;gap:10px;justify-content:space-between}.row>div:first-child{flex:1;min-width:0}
-.done{text-decoration:line-through;opacity:.5}.tag{font-size:11px;padding:2px 8px;border-radius:99px;background:var(--bd)}
+.btn{background:var(--ac);color:#fff;border:0;border-radius:10px;padding:11px 16px;font:inherit;font-weight:600;cursor:pointer;transition:transform .1s,filter .2s}
+.btn.w{width:100%}.btn:hover{filter:brightness(1.08)}.btn:active,.ic:active,nav button:active{transform:scale(.95)}
+.btn.g{background:var(--bd);color:var(--tx)}
+.ic{background:none;border:0;font-size:18px;cursor:pointer;color:var(--mut);padding:6px;min-width:38px;min-height:38px}
+.row{display:flex;align-items:center;gap:8px;justify-content:space-between}.row>div:first-child{flex:1;min-width:0}
+.acts{display:flex;flex-wrap:wrap;justify-content:flex-end}
+.done{text-decoration:line-through;opacity:.5}
+.tag{font-size:11px;padding:2px 8px;border-radius:99px;background:var(--bd);color:var(--mut)}
 .High{background:#fee2e2;color:#b91c1c}.Medium{background:#fef3c7;color:#b45309}.Low{background:#dcfce7;color:#15803d}
+.dover{background:#fee2e2;color:#b91c1c}.dtoday{background:#fef3c7;color:#b45309}.dsoon{background:var(--bd);color:var(--mut)}
+.t-High{border-left:4px solid #ef4444}.t-Medium{border-left:4px solid #f59e0b}.t-Low{border-left:4px solid #10b981}
 .bar{height:10px;background:var(--bd);border-radius:9px;overflow:hidden;margin:4px 0 12px}.bar i{display:block;height:100%;background:var(--ac)}
 .run{border-color:var(--ac);box-shadow:0 0 0 2px var(--ac)}
-.ban{background:#fff1f2;border:1px solid #fecdd3;color:#9f1239;border-radius:16px;padding:14px;margin-bottom:14px}
-.empty{text-align:center;color:var(--mut);padding:30px}
+.ban{background:var(--card);border:1px solid var(--ac);border-radius:16px;padding:12px 14px;margin-bottom:12px}
+.empty{text-align:center;color:var(--mut);padding:34px 16px}
+.hero{background:linear-gradient(135deg,var(--ac),#7c3aed);color:#fff;border:0;display:flex;align-items:center;gap:16px}
+body.burn .hero{background:linear-gradient(135deg,#3b3733,#2a2826)}
+.hero h3{margin:0 0 4px;font-size:20px}.hero p{margin:0;opacity:.9;font-size:13px}
+.seg{display:flex;gap:6px;margin:4px 0 10px}.seg label{flex:1;margin:0}.seg input{display:none}
+.seg span,.seg button{display:block;width:100%;text-align:center;padding:10px 0;border-radius:10px;border:1px solid var(--bd);font:inherit;font-size:13px;font-weight:600;color:var(--mut);cursor:pointer;background:var(--bg)}
+.seg input:checked+span,.seg button.on{color:#fff;border-color:transparent;background:var(--ac)}
+.pH input:checked+span{background:#ef4444}.pM input:checked+span{background:#f59e0b}.pL input:checked+span{background:#10b981}
+.chips{display:flex;gap:6px;flex-wrap:wrap;margin:-4px 0 10px}.chip{border:1px solid var(--bd);background:var(--bg);color:var(--tx);border-radius:99px;padding:6px 12px;font:inherit;font-size:13px;cursor:pointer}
+.two{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.moods{display:flex;gap:8px;margin-top:8px}.moods button{flex:1;font-size:24px;padding:8px 0;border-radius:12px;border:1px solid var(--bd);background:var(--bg);cursor:pointer}
+.moods button.on{border-color:var(--ac);box-shadow:0 0 0 2px var(--ac)}
+.breathe{width:90px;height:90px;border-radius:50%;background:var(--ac);opacity:.5;margin:8px auto 12px;animation:br 8s ease-in-out infinite}
+@keyframes br{0%,100%{transform:scale(.6)}50%{transform:scale(1.1)}}
+.tbar{position:sticky;top:8px;z-index:8;background:var(--ac);color:#fff;border-radius:14px;padding:10px 14px;margin-bottom:12px;display:flex;justify-content:space-between;align-items:center;gap:8px;box-shadow:0 6px 18px rgba(0,0,0,.18)}
 .burnbtn{width:100%;margin-top:14px;padding:12px;border-radius:12px;border:1px solid var(--bd);background:var(--card);color:var(--tx);font:inherit;cursor:pointer}
+details{background:var(--card);border:1px solid var(--bd);border-radius:14px;padding:12px 14px;margin-bottom:8px}
+summary{font-weight:600;cursor:pointer}details p,details li{color:var(--mut);font-size:14px;line-height:1.5}details ul{padding-left:18px;margin:6px 0}
+#toast{position:fixed;left:50%;bottom:92px;transform:translate(-50%,20px);background:#1f2937;color:#fff;padding:10px 14px;border-radius:12px;display:flex;gap:12px;align-items:center;opacity:0;pointer-events:none;transition:.25s;z-index:60;max-width:92vw}
+#toast.show{opacity:1;pointer-events:auto;transform:translate(-50%,0)}#toast button{background:none;border:0;color:#93c5fd;font:inherit;font-weight:700;cursor:pointer}
+#focus{position:fixed;inset:0;z-index:70;background:var(--bg);display:none;flex-direction:column;align-items:center;justify-content:center;gap:14px;text-align:center;padding:20px}
+#lock{position:fixed;inset:0;z-index:150;background:#0b1120;color:#fff;display:none;align-items:center;justify-content:center;text-align:center;padding:20px}
+#lock .lk{width:100%;max-width:280px}#lock input{text-align:center;font-size:22px;letter-spacing:.4em;background:#1e293b;border-color:#334155;color:#fff}
+#splash{position:fixed;inset:0;z-index:200;background:linear-gradient(160deg,#0b1120,#1e3a8a 60%,#7c3aed);color:#fff;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:8px;transition:opacity .5s;cursor:pointer}
+#splash.out{opacity:0;pointer-events:none}
+#splash .ln{stroke-dasharray:240;stroke-dashoffset:240;animation:dr 1.2s .2s ease forwards}@keyframes dr{to{stroke-dashoffset:0}}
+#splash h1{margin:10px 0 0;letter-spacing:.4em;font-size:32px;opacity:0;animation:up .6s .9s forwards}
+#splash p{margin:0;opacity:0;animation:up .6s 1.2s forwards}#splash small{position:absolute;bottom:40px;opacity:.6}
 @media(min-width:768px){
 nav{top:0;bottom:auto;width:200px;flex-direction:column;overflow:visible;padding:24px 10px}
 nav button{flex:none;text-align:left;display:flex;gap:10px;align-items:center;font-size:14px;padding:10px 12px}nav button b{font-size:18px;display:inline}
-main{margin-left:200px;padding:32px 40px;max-width:none}}
+main{margin-left:200px;padding:32px 40px;max-width:none}.mob{display:none}#toast{bottom:24px}}
+@media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}#splash .ln{stroke-dashoffset:0}#splash h1,#splash p{opacity:1}}
 </style></head><body>
 <nav id="nav"></nav><main id="m"></main>
+<div id="toast"></div><div id="focus"></div>
+<div id="lock"><div class="lk"><div style="font-size:42px">🔒</div><h2>Pulse is locked</h2><input id="pin" type="password" inputmode="numeric" autocomplete="off" placeholder="PIN"><div id="lerr" class="mut" style="min-height:18px;margin-bottom:8px"></div><button class="btn w" data-a="unlock">Unlock</button></div></div>
 <script>
 const K='pulse-v1',$=s=>document.querySelector(s);
 const esc=s=>String(s??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
-let S={tab:'dashboard',burn:false,acts:[],orgs:[],jours:[],timer:null,jt:''};
+let S={tab:'dashboard',sub:'help',burn:false,theme:'auto',budget:6,pin:'',moods:{},lastBackup:0,since:0,notified:{},acts:[],orgs:[],jours:[],timer:null,jt:'',edit:null,q:'',fo:'',locked:false,focus:false};
 try{Object.assign(S,JSON.parse(localStorage.getItem(K)||'{}'))}catch(e){}
+if(!S.since)S.since=Date.now();
+S.locked=!!S.pin;S.edit=null;S.focus=false;S.q='';S.fo='';
 const save=()=>{try{localStorage.setItem(K,JSON.stringify(S))}catch(e){}};
 const id=()=>Date.now().toString(36)+Math.random().toString(36).slice(2,6);
-const TABS=[['dashboard','🏠','Home'],['inbox','📥','Inbox'],['planner','📅','Planner'],['delegation','👥','Delegate'],['organizations','💼','Orgs'],['analytics','📊','Stats'],['journal','📓','Journal']];
+const pad=n=>String(n).padStart(2,'0');
+const ymd=d=>d.getFullYear()+'-'+pad(d.getMonth()+1)+'-'+pad(d.getDate());
+const hm=m=>{m=Math.round(m||0);const h=Math.floor(m/60),r=m%60;return h?(r?`${h}h ${r}m`:`${h}h`):`${r}m`};
+const TABS=[['dashboard','🏠','Home'],['inbox','📥','Inbox'],['planner','📅','Planner'],['delegation','👥','Delegate'],['organizations','💼','Orgs'],['analytics','📊','Stats'],['journal','📓','Journal'],['more','❓','Help']];
 let msgI=0;
 const msg=()=>{const n=S.acts.filter(a=>a.status==='Completed'&&!a.triage).length,w=n+' task'+(n===1?'':'s');
 return [`You've completed ${w}. That is real effort, so give yourself permission to rest.`,`Only your High-priority tasks are showing. ${w} done already, and everything else can wait.`,`It's okay to slow down today. You've done ${w}. Take a breath and come back when you're ready.`][msgI%3]};
@@ -54,31 +101,69 @@ const done=a=>a.status==='Completed'&&!a.triage;
 const visible=()=>S.acts.filter(a=>!a.triage&&!a.deleg).filter(a=>!(S.burn&&a.status!=='Completed')||a.pri==='High');
 const fmt=s=>String(Math.floor(s/60)).padStart(2,'0')+':'+String(s%60).padStart(2,'0');
 const orgOpts=(sel,ph)=>`<option value="">${ph}</option>`+S.orgs.map(o=>`<option value="${o.id}" ${o.id===sel?'selected':''}>${esc(o.name)}</option>`).join('');
+const empty=t=>`<div class="card empty"><div style="font-size:34px;margin-bottom:6px">✨</div>${t}</div>`;
+const dl=(n,t,d)=>{const a=document.createElement('a');a.href=URL.createObjectURL(new Blob([d],{type:t}));a.download=n;a.click();setTimeout(()=>URL.revokeObjectURL(a.href),3000)};
+const hash=async p=>{try{const b=await crypto.subtle.digest('SHA-256',new TextEncoder().encode('pulse'+p));return [...new Uint8Array(b)].map(x=>x.toString(16).padStart(2,'0')).join('')}catch(e){return 'x'+p.split('').reduce((a,c)=>(a*31+c.charCodeAt(0))>>>0,7)}};
 
+/* ---- due dates & reminders ---- */
+const dueOf=a=>a.deleg?a.fu:a.due;
+function dstate(a){if(a.status==='Completed'||a.triage)return '';const d=dueOf(a);if(!d)return '';const t=ymd(new Date()),day=d.slice(0,10);
+ if(day<t)return 'over';if(day>t)return 'soon';if(d.length>10&&new Date(d).getTime()<Date.now())return 'over';return 'today'}
+const fmtDue=d=>{const dt=new Date(d.length>10?d:d+'T00:00');return dt.toLocaleDateString('en-US',{month:'short',day:'numeric'})+(d.length>10?' '+dt.toLocaleTimeString('en-US',{hour:'numeric',minute:'2-digit'}):'')};
+const dueTag=a=>{const s=dstate(a);return s?`<span class="tag d${s}">${s==='over'?'⚠ Overdue · ':s==='today'?'Today · ':''}${fmtDue(dueOf(a))}</span>`:''};
+function rem(){const l=S.acts.filter(a=>!a.triage&&a.status!=='Completed'&&dueOf(a)&&(!S.burn||a.pri==='High'));return{over:l.filter(a=>dstate(a)==='over'),today:l.filter(a=>dstate(a)==='today')}}
+function badge(){try{const r=rem(),n=S.burn?0:r.over.length+r.today.length;if(navigator.setAppBadge){n?navigator.setAppBadge(n):navigator.clearAppBadge()}}catch(e){}}
+function notify(t,b){if(S.burn)return;try{if('Notification' in window&&Notification.permission==='granted'){if(navigator.serviceWorker&&navigator.serviceWorker.ready)navigator.serviceWorker.ready.then(r=>r.showNotification(t,{body:b,icon:'icon-192.png'})).catch(()=>new Notification(t,{body:b}));else new Notification(t,{body:b})}}catch(e){}}
+function nextDue(t){const has=!!(t.due&&t.due.length>10),b=t.due?new Date(has?t.due:t.due+'T00:00'):new Date();b.setHours(has?b.getHours():0,has?b.getMinutes():0,0,0);
+ const td=ymd(new Date());let g=0;do{if(t.rep==='daily')b.setDate(b.getDate()+1);else if(t.rep==='weekly')b.setDate(b.getDate()+7);else b.setMonth(b.getMonth()+1)}while(ymd(b)<td&&++g<400);
+ return ymd(b)+(has?'T'+pad(b.getHours())+':'+pad(b.getMinutes()):'')}
+
+/* ---- toast + undo ---- */
+let UNDO=null,tt;
+function toast(m,u){clearTimeout(tt);UNDO=u||null;const t=$('#toast');t.innerHTML=`<span>${esc(m)}</span>${u?'<button data-a="undo">Undo</button>':''}`;t.classList.add('show');tt=setTimeout(()=>t.classList.remove('show'),6000)}
+function rm(k,i,label){const x=S[k].findIndex(y=>y.id===i);if(x<0)return;const [it]=S[k].splice(x,1);toast(label+' deleted',()=>{S[k].splice(x,0,it)})}
+
+/* ---- views ---- */
 function taskRow(t,full){
- const run=S.timer&&S.timer.id===t.id;
- return `<div class="card row ${run?'run':''}"><div>
- <div class="${t.status==='Completed'?'done':''}"><b>${esc(t.title)}</b> <span class="tag ${t.pri}">${t.pri}</span></div>
- ${full?`<div class="mut">Est ${t.dur}m${t.actual?` · Logged ${t.actual}m`:''} · ${esc(t.type)} · ${esc(orgName(t.org))}</div>`:''}</div>
- <button class="ic" data-a="toggle" data-id="${t.id}">${t.status==='Completed'?'✅':'⚪'}</button>
- ${full&&t.status!=='Completed'?`<button class="ic" data-a="timer" data-id="${t.id}">${run?`⏹ <span id="tm">${fmt(Math.floor((Date.now()-S.timer.start)/1000))}</span>`:'▶'}</button>`:''}
- ${full?`<button class="ic" data-a="del" data-id="${t.id}">🗑</button>`:''}</div>`;
+ const run=S.timer&&S.timer.id===t.id,c=t.status==='Completed';
+ return `<div class="card row t-${t.pri} ${run?'run':''}"><div>
+ <div class="${c?'done':''}"><b>${esc(t.title)}</b> <span class="tag ${t.pri}">${t.pri}</span>${t.rep?` <span class="tag">🔁 ${t.rep}</span>`:''}</div>
+ <div class="mut">${full?`Est ${hm(t.dur||30)}${t.actual?` · Logged ${hm(t.actual)}`:''} · ${esc(t.type||'')} · ${esc(orgName(t.org))} `:''}${dueTag(t)}</div>
+ ${full&&t.notes?`<div class="mut" style="margin-top:4px">📝 ${esc(t.notes)}</div>`:''}</div>
+ <div class="acts"><button class="ic" data-a="toggle" data-id="${t.id}">${c?'✅':'⚪'}</button>
+ ${full&&!c?`<button class="ic" data-a="timer" data-id="${t.id}">${run?`⏹ <span class="tm">${fmt(Math.floor((Date.now()-S.timer.start)/1000))}</span>`:'▶'}</button>`:''}
+ ${full?`<button class="ic" data-a="edit" data-id="${t.id}">✏️</button>`:''}
+ ${full&&dueOf(t)?`<button class="ic" data-a="ics" data-id="${t.id}">📅</button>`:''}
+ ${full?`<button class="ic" data-a="del" data-id="${t.id}">🗑</button>`:''}</div></div>`;
 }
-const empty=t=>`<div class="card empty">${t}</div>`;
-
+const timerBar=()=>{if(!S.timer)return '';const t=S.acts.find(a=>a.id===S.timer.id);
+ return t?`<div class="tbar"><span>⏱ ${esc(t.title)} · <b class="tm">${fmt(Math.floor((Date.now()-S.timer.start)/1000))}</b></span><span><button class="btn g" style="padding:6px 12px" data-a="focus">Focus</button> <button class="btn" style="background:#fff;color:var(--ac);padding:6px 14px" data-a="timer" data-id="${t.id}">Stop</button></span></div>`:''};
+function plist(){
+ let l=visible().filter(a=>(!S.fo||a.org===S.fo)&&(!S.q||(a.title+' '+(a.notes||'')).toLowerCase().includes(S.q.toLowerCase())));
+ l=l.slice().sort((a,b)=>(a.status==='Completed')-(b.status==='Completed')||(dueOf(a)||'9999').localeCompare(dueOf(b)||'9999'));
+ return l.length?l.map(t=>taskRow(t,true)).join(''):empty(S.q||S.fo?'No matching tasks.':'No tasks yet.')}
 const sum=t=>{const p=t.split(/[.!?\n]+/).map(x=>x.trim()).filter(Boolean);
  return{w:p.filter(x=>/\b(finish|complet|done|shipped|launch|solved|won|closed|sent|achiev)/i.test(x)),a:p.filter(x=>/\b(need to|have to|must|tomorrow|to-?do|follow up|remind|next)\b/i.test(x))}};
 const list=(h,c,a)=>a.length?`<div style="margin-top:8px"><b style="color:${c};font-size:13px">${h}</b><ul style="margin:4px 0;padding-left:20px">${a.map(x=>`<li>${esc(x)}</li>`).join('')}</ul></div>`:'';
+const EM=['😫','😕','😐','🙂','😄'];
+
 const V={
 dashboard(){
  const d=S.acts.filter(done),h=(d.reduce((a,t)=>a+mins(t),0)/60).toFixed(1),w=S.acts.filter(a=>a.deleg&&a.status!=='Completed').length;
- const f=visible().filter(a=>a.status!=='Completed').slice(0,5);
- return `<div class="grid"><div class="card"><div class="big">${d.length}</div><b>Completed</b><div class="mut">All tasks</div></div>
- <div class="card"><div class="big">${h}h</div><b>Time logged</b><div class="mut">Productive hours</div></div>
- <div class="card"><div class="big">${w}</div><b>Waiting on</b><div class="mut">Pending delegations</div></div></div>
- <h3>Today's focus</h3>${f.length?f.map(t=>taskRow(t,false)).join(''):empty('Nothing pending. Add a task in the Planner.')}
- <div class="card"><b>Move data between devices</b><div class="mut" style="margin:4px 0 10px">Export a backup file, send it to your other device, and import it there. Import adds anything that device is missing.</div>
- <div class="grid" style="gap:8px"><button class="btn" data-a="export">⬇ Export backup</button><label class="btn" style="text-align:center;margin:0;color:#fff;font-size:15px">⬆ Import backup<input type="file" accept=".json,application/json" data-c="import" hidden></label></div></div>`;
+ const f=visible().filter(a=>a.status!=='Completed').sort((a,b)=>(dueOf(a)||'9999').localeCompare(dueOf(b)||'9999')).slice(0,5);
+ const t0=new Date().setHours(0,0,0,0),dt=S.acts.filter(a=>done(a)&&(a.doneAt||0)>=t0).length,pend=visible().filter(a=>a.status!=='Completed').length,tot=dt+pend,pc=tot?dt/tot:0,hr=new Date().getHours(),gr=hr<12?'Good morning':hr<18?'Good afternoon':'Good evening',R=26,C=2*Math.PI*R;
+ const hero=`<div class="card hero"><svg width="68" height="68" viewBox="0 0 68 68"><circle cx="34" cy="34" r="${R}" fill="none" stroke="rgba(255,255,255,.3)" stroke-width="7"/><circle cx="34" cy="34" r="${R}" fill="none" stroke="#fff" stroke-width="7" stroke-linecap="round" stroke-dasharray="${C*pc} ${C}" transform="rotate(-90 34 34)"/><text x="34" y="39" text-anchor="middle" font-size="14" font-weight="700" fill="#fff">${Math.round(pc*100)}%</text></svg><div><h3>${gr}</h3><p>${dt} done today · ${pend} to go</p></div></div>`;
+ const r=rem(),n=r.over.length+r.today.length;
+ const rb=n?`<div class="ban"><b>🔔 ${r.over.length?r.over.length+' overdue':''}${r.over.length&&r.today.length?' · ':''}${r.today.length?r.today.length+' due today':''}</b>${[...r.over,...r.today].slice(0,4).map(a=>`<div class="mut" style="margin-top:4px">${a.deleg?'👥 Follow up with '+esc(a.deleg)+': ':'• '}${esc(a.title)} ${dueTag(a)}</div>`).join('')}</div>`:'';
+ const days=Math.floor((Date.now()-(S.lastBackup||S.since))/864e5);
+ const bk=(S.acts.length+S.jours.length>0&&days>=7)?`<div class="ban">💾 It's been ${days} days since your last backup. <button class="btn" style="padding:6px 12px;margin-left:6px" data-a="export">Export now</button></div>`:'';
+ const td=ymd(new Date()),mv=S.moods[td];
+ const low=(()=>{const v=Object.keys(S.moods).sort().slice(-3).map(k=>S.moods[k]);return v.length===3&&v.every(x=>x<=2)})();
+ const sug=low&&!S.burn?`<div class="ban">Your last 3 check-ins were low. <button class="btn" style="padding:6px 12px;margin-left:6px" data-a="burn">Try Burnout Buffer</button></div>`:'';
+ const ci=`<div class="card"><b>How's your energy today?</b><div class="moods">${EM.map((e,i)=>`<button class="${mv===i+1?'on':''}" data-a="mood" data-id="${i+1}">${e}</button>`).join('')}</div></div>`;
+ const mid=S.burn?`<div class="card" style="text-align:center"><div class="breathe"></div><div class="mut">Breathe in… and out. Nothing else needs you right now.</div></div>`:
+ `<div class="grid"><div class="card"><div class="big">${d.length}</div><b>Completed</b><div class="mut">All tasks</div></div><div class="card"><div class="big">${h}h</div><b>Time logged</b><div class="mut">Productive hours</div></div><div class="card"><div class="big">${w}</div><b>Waiting on</b><div class="mut">Pending delegations</div></div></div>`;
+ return hero+rb+bk+sug+ci+mid+`<h3>${S.burn?'Only what matters':"Today's focus"}</h3>${f.length?f.map(t=>taskRow(t,false)).join(''):empty('Nothing pending. Add a task in the Planner.')}`;
 },
 inbox(){
  const l=S.acts.filter(a=>a.triage);
@@ -87,28 +172,43 @@ inbox(){
  <button class="btn" data-a="plan" data-id="${t.id}">To planner</button><button class="ic" data-a="del" data-id="${t.id}">🗑</button></div></div>`).join(''):empty('Inbox zero. Nice work!')}`;
 },
 planner(){
- const l=visible();
- return `<form data-f="task" class="card"><b>Plan activity</b><br><label>Title</label><input name="title" required placeholder="What needs doing?">
- <div class="grid" style="gap:10px"><div><label>Estimate (min)</label><input name="dur" type="number" min="5" step="5" value="30"></div>
- <div><label>Priority</label><select name="pri"><option>High</option><option selected>Medium</option><option>Low</option></select></div></div>
- <label>Type</label><select name="type"><option>Deep Work</option><option>Strategic</option><option>Admin/Operations</option><option>Meeting</option></select>
- <label>Organization</label><select name="org">${orgOpts('','Personal / none')}</select><button class="btn w">Add task</button></form>
- ${l.length?l.map(t=>taskRow(t,true)).join(''):empty('No tasks yet.')}`;
+ const e=S.edit?S.acts.find(a=>a.id===S.edit):null,v=(k,d='')=>e&&e[k]!=null?e[k]:d;
+ const dur=v('dur',30),H=Math.floor(dur/60),M=dur%60,due=v('due',''),dd=due.slice(0,10),dtm=due.length>10?due.slice(11,16):'';
+ const plan=S.acts.filter(a=>!a.triage&&!a.deleg&&a.status!=='Completed'&&['over','today'].includes(dstate(a))).reduce((s,a)=>s+(a.dur||30),0),bud=S.budget*60;
+ const pr=v('pri','Medium'),ty=v('type','Deep Work');
+ const typeOpts=['Deep Work','Strategic','Admin/Operations','Meeting'].map(x=>`<option ${x===ty?'selected':''}>${x}</option>`).join('');
+ return `<div class="card"><div class="row"><b>Today's load</b><span class="mut">${hm(plan)} of ${hm(bud)}${plan>bud?' ⚠ over budget':''}</span></div><div class="bar" style="margin-bottom:4px"><i style="width:${Math.min(100,plan/bud*100)}%;${plan>bud?'background:#ef4444':''}"></i></div><div class="mut">Counts tasks due today or overdue. Change your budget under Help → Settings.</div></div>
+ <form data-f="task" class="card"><b>${e?'Edit task':'Plan activity'}</b><br><label>Title</label><input name="title" required value="${esc(v('title'))}" placeholder="What needs doing?">
+ <label>Estimate</label><div class="two"><input name="h" type="number" min="0" max="99" value="${H}" placeholder="hours"><input name="mm" type="number" min="0" max="59" value="${M}" placeholder="minutes"></div>
+ <div class="chips">${[15,30,60,90,120].map(m=>`<button type="button" class="chip" data-a="est" data-id="${m}">${hm(m)}</button>`).join('')}</div>
+ <label>Priority</label><div class="seg"><label class="pH"><input type="radio" name="pri" value="High" ${pr==='High'?'checked':''}><span>High</span></label><label class="pM"><input type="radio" name="pri" value="Medium" ${pr==='Medium'?'checked':''}><span>Med</span></label><label class="pL"><input type="radio" name="pri" value="Low" ${pr==='Low'?'checked':''}><span>Low</span></label></div>
+ <label>Type</label><select name="type">${typeOpts}</select>
+ <label>Organization</label><select name="org">${orgOpts(v('org'),'Personal / none')}</select>
+ <label>Due date and time (optional)</label><div class="two"><input name="dd" type="date" value="${dd}"><input name="dt" type="time" value="${dtm}"></div>
+ <div class="chips"><button type="button" class="chip" data-a="dueq" data-id="0">Today</button><button type="button" class="chip" data-a="dueq" data-id="1">Tomorrow</button><button type="button" class="chip" data-a="dueq" data-id="7">Next week</button><button type="button" class="chip" data-a="dueq" data-id="x">Clear</button></div>
+ <label>Repeat</label><select name="rep">${['','daily','weekly','monthly'].map(x=>`<option value="${x}" ${x===v('rep','')?'selected':''}>${x||'Does not repeat'}</option>`).join('')}</select>
+ <label>Notes (optional)</label><textarea name="notes" rows="2" placeholder="Details, links, next step…">${esc(v('notes'))}</textarea>
+ <button class="btn w">${e?'Save changes':'Add task'}</button>${e?'<button type="button" class="btn g w" style="margin-top:8px" data-a="cancel">Cancel</button>':''}</form>
+ <div class="two"><input data-s="q" value="${esc(S.q)}" placeholder="🔍 Search tasks"><select data-c="fo">${orgOpts(S.fo,'All organizations')}</select></div>
+ <div id="plist">${plist()}</div>`;
 },
 delegation(){
  const l=S.acts.filter(a=>a.deleg);
  return `<form data-f="deleg" class="card"><b>Delegate task</b><br><label>Title</label><input name="title" required>
  <label>Delegated to</label><input name="to" required placeholder="Name or role"><label>Follow-up date</label><input name="fu" type="date" required>
  <label>Organization</label><select name="org">${orgOpts('','Personal / none')}</select><button class="btn w">Assign</button></form>
- ${l.length?l.map(t=>`<div class="card row"><div><b>${esc(t.title)}</b><div class="mut">👤 ${esc(t.deleg)} · Follow up ${esc(t.fu)} · ${esc(orgName(t.org))}</div></div>
+ ${l.length?l.map(t=>`<div class="card row"><div><b class="${t.status==='Completed'?'done':''}">${esc(t.title)}</b><div class="mut">👤 ${esc(t.deleg)} · ${esc(orgName(t.org))} ${dueTag(t)}${dstate(t)?'':' · Follow up '+esc(t.fu)}</div></div>
  <select data-c="dstatus" data-id="${t.id}" style="width:auto;margin:0"><option value="Waiting" ${t.status==='Waiting'?'selected':''}>Waiting</option><option value="Completed" ${t.status==='Completed'?'selected':''}>Resolved</option></select>
- <button class="ic" data-a="del" data-id="${t.id}">🗑</button></div>`).join(''):empty('Nothing delegated.')}`;
+ <button class="ic" data-a="ics" data-id="${t.id}">📅</button><button class="ic" data-a="del" data-id="${t.id}">🗑</button></div>`).join(''):empty('Nothing delegated.')}`;
 },
 organizations(){
- return `<form data-f="org" class="card"><b>Add affiliation</b><br><label>Organization name</label><input name="name" required><label>Your role</label><input name="role" required><button class="btn w">Create profile</button></form>
+ const wk=Date.now()-7*864e5;
+ return `<form data-f="org" class="card"><b>Add affiliation</b><br><label>Organization name</label><input name="name" required><label>Your role</label><input name="role" required><label>Weekly time goal in hours (optional)</label><input name="goal" type="number" min="0" step="0.5" placeholder="e.g. 8"><button class="btn w">Create profile</button></form>
  ${S.orgs.length?S.orgs.map(o=>{const t=S.acts.filter(a=>a.org===o.id&&!a.triage),c=t.filter(a=>a.status==='Completed').length,p=t.length?c/t.length*100:0;
+ const wm=S.acts.filter(a=>a.org===o.id&&done(a)&&!a.deleg&&(a.doneAt||0)>=wk).reduce((s,a)=>s+mins(a),0);
  return `<div class="card"><div class="row"><div><b>${esc(o.name)}</b> <span class="tag">${esc(o.role)}</span></div><button class="ic" data-a="delorg" data-id="${o.id}">🗑</button></div>
- <div class="mut" style="margin-top:8px">Completion ${c}/${t.length}</div><div class="bar"><i style="width:${p}%"></i></div></div>`}).join(''):empty('No organizations yet.')}`;
+ <div class="mut" style="margin-top:8px">Completion ${c}/${t.length}</div><div class="bar"><i style="width:${p}%"></i></div>
+ ${o.goal?`<div class="mut">Last 7 days: ${hm(wm)} of ${o.goal}h goal</div><div class="bar"><i style="width:${Math.min(100,wm/(o.goal*60)*100)}%"></i></div>`:''}</div>`}).join(''):empty('No organizations yet.')}`;
 },
 analytics(){
  const ty={},og={},day={},nw=new Date();nw.setHours(0,0,0,0);
@@ -118,55 +218,119 @@ analytics(){
  const sorted=o=>Object.entries(o).sort((a,b)=>b[1]-a[1]);
  const donut=e=>{const tot=e.reduce((a,x)=>a+x[1],0);if(!tot)return '<div class="mut">No completed tasks yet.</div>';const C=2*Math.PI*40;let off=0;
   const seg=e.map(([k,v],i)=>{const l=v/tot*C,c=`<circle r="40" cx="60" cy="60" fill="none" stroke="${COL[i%6]}" stroke-width="20" stroke-dasharray="${l} ${C-l}" stroke-dashoffset="${-off}" transform="rotate(-90 60 60)"/>`;off+=l;return c}).join('');
-  return `<div style="display:flex;gap:16px;align-items:center;flex-wrap:wrap"><svg viewBox="0 0 120 120" width="130" height="130">${seg}<text x="60" y="65" text-anchor="middle" font-size="16" font-weight="700" fill="currentColor">${(tot/60).toFixed(1)}h</text></svg><div>${e.map(([k,v],i)=>`<div style="font-size:13px;margin:3px 0"><span style="color:${COL[i%6]}">●</span> ${esc(k)} <b>${v}m</b></div>`).join('')}</div></div>`};
+  return `<div style="display:flex;gap:16px;align-items:center;flex-wrap:wrap"><svg viewBox="0 0 120 120" width="130" height="130">${seg}<text x="60" y="65" text-anchor="middle" font-size="16" font-weight="700" fill="currentColor">${hm(tot)}</text></svg><div>${e.map(([k,v],i)=>`<div style="font-size:13px;margin:3px 0"><span style="color:${COL[i%6]}">●</span> ${esc(k)} <b>${hm(v)}</b></div>`).join('')}</div></div>`};
  const wk=[6,5,4,3,2,1,0].map(k=>day[k]||0),mx=Math.max(...wk,1);
  const week=`<svg viewBox="0 0 214 110" width="100%">${wk.map((v,i)=>{const h=v/mx*70,x=i*30+4,l=new Date(Date.now()-(6-i)*864e5).toLocaleDateString('en-US',{weekday:'short'});
   return `<rect x="${x}" y="${88-h}" width="22" height="${Math.max(h,2)}" rx="4" fill="var(--ac)"/><text x="${x+11}" y="${84-h}" text-anchor="middle" font-size="9" fill="currentColor">${v||''}</text><text x="${x+11}" y="103" text-anchor="middle" font-size="9" fill="currentColor" opacity=".6">${l}</text>`}).join('')}</svg>`;
  const e=sorted(og),mo=Math.max(...e.map(x=>x[1]),1);
- const orgBars=e.length?e.map(([k,v])=>`<div class="row"><b>${esc(k)}</b><span class="mut">${(v/60).toFixed(1)}h</span></div><div class="bar"><i style="width:${v/mo*100}%"></i></div>`).join(''):'<div class="mut">No completed tasks yet.</div>';
- return `<div class="card"><b>Where your time goes</b><br><br>${donut(sorted(ty))}</div><div class="card"><b>Minutes completed, last 7 days</b>${week}</div><div class="card"><b>Time by organization</b><br><br>${orgBars}</div>`;
+ const orgBars=e.length?e.map(([k,v])=>`<div class="row"><b>${esc(k)}</b><span class="mut">${hm(v)}</span></div><div class="bar"><i style="width:${v/mo*100}%"></i></div>`).join(''):'<div class="mut">No completed tasks yet.</div>';
+ const pr=S.acts.filter(a=>done(a)&&!a.deleg&&a.actual&&a.dur),se=pr.reduce((s,a)=>s+a.dur,0),sa=pr.reduce((s,a)=>s+a.actual,0);
+ const ins=pr.length>=2?(Math.abs(sa/se-1)<.05?'Your estimates are right on target.':`You usually take ${Math.abs(Math.round((sa/se-1)*100))}% ${sa>=se?'longer':'less time'} than you estimate (${pr.length} timed tasks).`):'Time a few tasks with the ▶ button to see how your estimates compare.';
+ const w7=Date.now()-7*864e5,wd=S.acts.filter(a=>done(a)&&(a.doneAt||0)>=w7),wmin=wd.reduce((s,a)=>s+mins(a),0);
+ const slip=S.acts.filter(a=>!a.triage&&a.status!=='Completed'&&dstate(a)==='over').length,wait=S.acts.filter(a=>a.deleg&&a.status!=='Completed').length;
+ const mv=[6,5,4,3,2,1,0].map(k=>S.moods[ymd(new Date(Date.now()-k*864e5))]),mvv=mv.filter(Boolean),avg=mvv.length?(mvv.reduce((a,b)=>a+b,0)/mvv.length).toFixed(1):null;
+ const review=`<div class="card"><b>Weekly review (last 7 days)</b><div class="grid" style="margin:10px 0"><div><div class="big">${wd.length}</div><div class="mut">tasks done</div></div><div><div class="big">${hm(wmin)}</div><div class="mut">time on done tasks</div></div><div><div class="big">${slip}</div><div class="mut">overdue</div></div><div><div class="big">${wait}</div><div class="mut">delegations waiting</div></div></div>
+ <div class="mut">Energy: ${mv.map(x=>x?EM[x-1]:'·').join(' ')}${avg?` · average ${avg}/5`:''}</div>${list('Wins','#059669',wd.slice(0,5).map(a=>a.title))}</div>`;
+ return review+`<div class="card"><b>Estimate vs. actual</b><p style="margin:6px 0 0">${ins}</p></div><div class="card"><b>Where your time goes</b><br><br>${donut(sorted(ty))}</div><div class="card"><b>Minutes completed, last 7 days</b>${week}</div><div class="card"><b>Time by organization</b><br><br>${orgBars}</div>`;
 },
 journal(){
  return `<div class="card"><div class="row"><b>End-of-day brain dump</b><button class="ic" data-a="mic" id="mic">🎙</button></div>
  <textarea id="jt" rows="7" placeholder="What did you accomplish? Any blockers? What's next?">${esc(S.jt)}</textarea><button class="btn w" data-a="savej">Save entry</button></div>
  ${S.jours.length?S.jours.slice(0,10).map(j=>`<div class="card"><div class="row"><span class="mut">${new Date(j.at).toLocaleString()}</span><button class="ic" data-a="delj" data-id="${j.id}">🗑</button></div><p style="white-space:pre-wrap">${esc(j.text)}</p>${(x=>list('Wins','#059669',x.w)+list('Next steps','#2563eb',x.a)+((x.w.length||x.a.length)?'<div class="mut">Sorted by keywords on your device, not AI.</div>':''))(sum(j.text))}</div>`).join(''):empty('No entries yet.')}`;
+},
+more(){
+ const tabs=`<div class="seg"><button class="${S.sub==='help'?'on':''}" data-a="sub" data-id="help">Help</button><button class="${S.sub==='settings'?'on':''}" data-a="sub" data-id="settings">Settings</button></div>`;
+ if(S.sub==='settings'){
+  const np='Notification' in window?Notification.permission:'unsupported';
+  return tabs+`<div class="card"><b>Theme</b><div class="seg" style="margin-top:8px">${['auto','light','dark'].map(x=>`<button class="${S.theme===x?'on':''}" data-a="theme" data-id="${x}">${x[0].toUpperCase()+x.slice(1)}</button>`).join('')}</div><div class="mut">Burnout Buffer always uses its own dim, low-color look.</div></div>
+  <div class="card"><b>Daily time budget (hours)</b><input type="number" min="1" max="16" step="0.5" value="${S.budget}" data-c="budget"><div class="mut">Used by the "Today's load" bar in the Planner.</div></div>
+  <div class="card"><b>Alerts</b><div class="mut" style="margin:6px 0 10px">Pulse can show alerts for due times and finished estimates, but only while the app is open or recently open.</div>
+  ${np==='default'?'<button class="btn" data-a="notif">Enable alerts</button>':np==='granted'?'<div>✅ Alerts are on</div>':np==='denied'?'<div class="mut">Blocked. Allow notifications for this site in your browser settings.</div>':'<div class="mut">Not available here. On iPhone, add Pulse to the Home Screen first.</div>'}</div>
+  <div class="card"><b>App lock (PIN)</b><div class="mut" style="margin:6px 0 10px">Asks for a PIN when you open Pulse or return after a minute away. It keeps casual snoopers out but is not encryption.</div>
+  ${S.pin?'<div style="margin-bottom:10px">🔒 PIN is on</div><button class="btn g" data-a="rmpin">Remove PIN</button>':'<input id="npin" type="password" inputmode="numeric" maxlength="8" placeholder="Choose 4 to 8 digits"><button class="btn" data-a="setpin">Set PIN</button>'}</div>
+  <div class="card"><b>Backup and move between devices</b><div class="mut" style="margin:4px 0 10px">Export a file, send it to your other device, and import it there. Import only adds items that device is missing.</div>
+  <div class="grid" style="gap:8px"><button class="btn" data-a="export">⬇ Export backup</button><label class="btn" style="text-align:center;margin:0;color:#fff;font-size:15px">⬆ Import backup<input type="file" accept=".json,application/json" data-c="import" hidden></label></div></div>
+  <div class="card"><button class="btn g w" data-a="intro">▶ Replay intro</button><div class="mut" style="text-align:center;margin-top:10px">Pulse · version 5 · your data stays on this device</div></div>`}
+ const H=(t,b)=>`<details><summary>${t}</summary>${b}</details>`;
+ return tabs+`<div class="card"><b>Welcome to Pulse</b><p class="mut" style="font-size:14px">Pulse helps you capture tasks, plan your day, time your work, track what you've handed off, and rest when you need to. Tap a section below to learn what each part does.</p></div>`+
+ H('🏠 Home','<p>Your day at a glance: a progress ring for today, reminders for overdue and due-today items, a quick energy check-in, totals, and your top five tasks. Tap the ⚪ circle to finish a task.</p>')+
+ H('📥 Inbox','<p>A fast place to dump anything on your mind. Later, assign each item to an organization or tap <b>To planner</b> to turn it into a real task.</p>')+
+ H('📅 Planner','<ul><li><b>Estimate:</b> enter hours and minutes, or tap a quick button like 1h 30m.</li><li><b>Due date and time:</b> optional. Tasks are sorted with the most urgent first and tagged Overdue or Today.</li><li><b>Repeat:</b> daily, weekly or monthly tasks create the next one when you finish them.</li><li><b>▶ Timer:</b> logs real time spent. <b>Focus</b> opens a full-screen timer.</li><li><b>✏️ Edit, 📅 calendar, 🗑 delete:</b> delete can be undone for a few seconds.</li><li><b>Today\'s load:</b> shows planned time against your daily budget.</li><li><b>Search and filter</b> by words or organization.</li></ul>')+
+ H('👥 Delegate','<p>Track tasks you handed to someone else, with a follow-up date. Overdue follow-ups show on Home. Mark them Resolved when done.</p>')+
+ H('💼 Orgs','<p>Add the groups or roles you work for. Give an organization a weekly hour goal to see your progress over the last 7 days.</p>')+
+ H('📊 Stats','<p>A weekly review (wins, overdue, waiting, energy), how your estimates compare with real time, a donut of time by task type, a 7-day chart, and time by organization.</p>')+
+ H('📓 Journal','<p>An end-of-day brain dump you can type or dictate with 🎙. Pulse sorts sentences into Wins and Next steps using keywords. This is simple matching on your device, not AI.</p>')+
+ H('💗 Burnout Buffer','<p>Tap the 🌙 button (top right on phones, bottom of any page, or the side menu on desktop). Pulse dims to a dark, low-color screen, shows only your High-priority tasks, hides charts and totals, quiets alerts and badges, and offers a slow breathing circle. Turn it off the same way.</p>')+
+ H('🔔 Reminders','<ul><li>Overdue and due-today items appear on Home and as a number badge on the app icon (on supported phones, updated when you open the app).</li><li>The 📅 button adds a task to your phone calendar, which sends the alert even when Pulse is closed. This is the most reliable reminder.</li><li>Under Settings you can enable alerts that show while Pulse is open.</li><li>A web app cannot reliably wake itself up in the background, so Pulse cannot promise alerts while closed.</li></ul>')+
+ H('😊 Energy check-in','<p>Tap how you feel once a day. After three low check-ins in a row, Pulse suggests Burnout Buffer. Your last 7 days appear in the weekly review.</p>')+
+ H('💾 Backup and devices','<p>Your data lives only in this browser on this device. Export a backup regularly, and use it to move to another device or recover after clearing browser data. Pulse reminds you after a week.</p>')+
+ H('🔒 PIN lock','<p>Set a PIN under Settings. If you forget it, the only way back in is clearing this site\'s data, which erases everything not backed up. Export a backup first.</p>')+
+ H('📲 Install and offline','<p>Open the site once while online, then use Add to Home Screen. After that Pulse opens without a signal.</p>');
 }};
 
+/* ---- render ---- */
 function render(){
  document.body.classList.toggle('burn',S.burn);
+ document.documentElement.dataset.theme=S.theme;
  $('#nav').innerHTML=TABS.map(([k,i,l])=>`<button class="${S.tab===k?'on':''}" data-a="tab" data-id="${k}"><b>${i}</b>${l}</button>`).join('');
- const t=TABS.find(x=>x[0]===S.tab);
- $('#m').innerHTML=`<h2>${t[2]==='Home'?'Dashboard':t[2]}</h2><div class="sub">${new Date().toLocaleDateString('en-US',{weekday:'long',month:'long',day:'numeric'})}</div>
- ${S.burn?`<div class="ban"><b>☕ Recovery mode</b><p style="margin:6px 0 0">${msg()}</p></div>`:''}
- ${V[S.tab]()}<button class="burnbtn" data-a="burn">${S.burn?'💗 Burnout Buffer is ON. Tap to turn off':'🌙 Activate Burnout Buffer'}</button>`;
+ const t=TABS.find(x=>x[0]===S.tab),title=t[2]==='Home'?'Dashboard':t[2]==='Help'?'Help & Settings':t[2];
+ $('#m').innerHTML=`<header class="hd"><div><h2>${title}</h2><div class="sub">${new Date().toLocaleDateString('en-US',{weekday:'long',month:'long',day:'numeric'})}</div></div><div class="hb"><button class="ic" data-a="help" title="Help">❓</button><button class="ic mob" data-a="burn" title="Burnout Buffer">${S.burn?'💗':'🌙'}</button></div></header>
+ ${S.burn?`<div class="ban"><b>☕ Recovery mode</b><p style="margin:6px 0 0;font-size:14px">${msg()}</p></div>`:''}
+ ${timerBar()}${V[S.tab]()}<button class="burnbtn" data-a="burn">${S.burn?'💗 Burnout Buffer is ON. Tap to turn off':'🌙 Activate Burnout Buffer'}</button>`;
+ const f=$('#focus');
+ if(S.focus&&S.timer){const k=S.acts.find(a=>a.id===S.timer.id);f.style.display='flex';
+  f.innerHTML=`<div class="mut">Focus</div><h2 style="margin:0">${esc(k?k.title:'')}</h2><div class="tm" style="font-size:64px;font-weight:700">${fmt(Math.floor((Date.now()-S.timer.start)/1000))}</div><div class="mut">Estimate ${hm((k&&k.dur)||30)}</div><div style="display:flex;gap:10px"><button class="btn" data-a="timer" data-id="${S.timer.id}">Stop &amp; save</button><button class="btn g" data-a="unfocus">Minimize</button></div>`}
+ else{f.style.display='none';f.innerHTML=''}
+ lockUI();badge();
 }
-function stopTimer(){
- if(!S.timer)return;const t=S.acts.find(a=>a.id===S.timer.id);
- if(t)t.actual=(t.actual||0)+Math.max(1,Math.ceil((Date.now()-S.timer.start)/60000));
- S.timer=null;
-}
+function lockUI(){const l=$('#lock');l.style.display=S.locked?'flex':'none'}
+function stopTimer(){if(!S.timer)return;const t=S.acts.find(a=>a.id===S.timer.id);
+ if(t)t.actual=(t.actual||0)+Math.max(1,Math.ceil((Date.now()-S.timer.start)/60000));S.timer=null;S.focus=false}
+
+/* ---- actions ---- */
 const A={
- export:()=>{const b=new Blob([JSON.stringify({acts:S.acts,orgs:S.orgs,jours:S.jours})],{type:'application/json'}),l=document.createElement('a');l.href=URL.createObjectURL(b);l.download='pulse-backup-'+new Date().toISOString().slice(0,10)+'.json';l.click();return 'skip'},
- tab:i=>S.tab=i,
+ tab:i=>{S.tab=i;S.edit=null;window.scrollTo(0,0)},
+ help:()=>{S.tab='more';S.sub='help';S.edit=null;window.scrollTo(0,0)},
+ sub:i=>S.sub=i,
  burn:()=>{S.burn=!S.burn;msgI++},
- toggle:i=>{const t=S.acts.find(a=>a.id===i);t.status=t.status==='Completed'?'Pending':'Completed';t.doneAt=t.status==='Completed'?Date.now():null;if(S.timer&&S.timer.id===i&&t.status==='Completed')stopTimer()},
- del:i=>{if(S.timer&&S.timer.id===i)S.timer=null;S.acts=S.acts.filter(a=>a.id!==i)},
- plan:i=>{S.acts.find(a=>a.id===i).triage=false},
+ toggle:i=>{const t=S.acts.find(a=>a.id===i),was=t.status==='Completed';t.status=was?'Pending':'Completed';t.doneAt=was?null:Date.now();
+  if(!was&&S.timer&&S.timer.id===i)stopTimer();
+  if(!was&&t.rep&&!t.deleg){S.acts.unshift({...t,id:id(),status:'Pending',actual:0,doneAt:null,created:Date.now(),due:nextDue(t)});toast('🔁 Next '+t.rep+' task created')}},
+ del:i=>{if(S.timer&&S.timer.id===i){S.timer=null;S.focus=false}rm('acts',i,'Task')},
+ plan:i=>{const t=S.acts.find(a=>a.id===i);t.triage=false;t.dur=t.dur||30;t.type=t.type||'Deep Work'},
  timer:i=>{const same=S.timer&&S.timer.id===i;stopTimer();if(!same)S.timer={id:i,start:Date.now()}},
- delorg:i=>{S.orgs=S.orgs.filter(o=>o.id!==i);S.acts.forEach(a=>{if(a.org===i)a.org=''})},
+ focus:()=>{S.focus=true},unfocus:()=>{S.focus=false},
+ edit:i=>{S.edit=i;S.tab='planner';window.scrollTo(0,0)},cancel:()=>{S.edit=null},
+ est:m=>{const h=$('[name=h]'),mm=$('[name=mm]');if(h&&mm){h.value=Math.floor(m/60);mm.value=m%60}return 'skip'},
+ dueq:k=>{const el=$('[name=dd]'),tm=$('[name=dt]');if(!el)return 'skip';if(k==='x'){el.value='';tm.value=''}else{const d=new Date();d.setDate(d.getDate()+ +k);el.value=ymd(d)}return 'skip'},
+ ics:i=>{const t=S.acts.find(a=>a.id===i),d=t&&dueOf(t);if(!d)return 'skip';const has=d.length>10,f=x=>x.getFullYear()+pad(x.getMonth()+1)+pad(x.getDate())+'T'+pad(x.getHours())+pad(x.getMinutes())+'00';
+  let s,e='';if(has){const st=new Date(d);s='DTSTART:'+f(st);e='DTEND:'+f(new Date(st.getTime()+(t.dur||30)*60000))}else s='DTSTART;VALUE=DATE:'+d.replace(/-/g,'');
+  dl((t.title.replace(/[^\w]+/g,'-').slice(0,30)||'task')+'.ics','text/calendar',['BEGIN:VCALENDAR','VERSION:2.0','PRODID:-//Pulse//EN','BEGIN:VEVENT','UID:'+t.id+'@pulse','DTSTAMP:'+new Date().toISOString().replace(/[-:]|\.\d{3}/g,''),s,e,'SUMMARY:'+(t.deleg?'Follow up: ':'')+t.title.replace(/[\r\n,;]+/g,' '),'BEGIN:VALARM',has?'TRIGGER:-PT15M':'TRIGGER;RELATED=START:PT9H','ACTION:DISPLAY','DESCRIPTION:Pulse reminder','END:VALARM','END:VEVENT','END:VCALENDAR'].filter(Boolean).join('\r\n'));return 'skip'},
+ mood:v=>{S.moods[ymd(new Date())]=+v},
+ theme:v=>{S.theme=v},
+ notif:()=>{try{Notification.requestPermission().then(()=>render())}catch(e){}return 'skip'},
+ setpin:()=>{const v=($('#npin')||{}).value||'';if(!/^\d{4,8}$/.test(v)){toast('PIN must be 4 to 8 digits');return 'skip'}hash(v).then(h=>{S.pin=h;save();render();toast('PIN set')});return 'skip'},
+ rmpin:()=>{S.pin='';S.locked=false},
+ unlock:()=>{const v=($('#pin')||{}).value||'';hash(v).then(h=>{if(h===S.pin){S.locked=false;$('#pin').value='';$('#lerr').textContent='';lockUI()}else $('#lerr').textContent='Wrong PIN'});return 'skip'},
+ undo:()=>{if(UNDO)UNDO();UNDO=null;$('#toast').classList.remove('show')},
+ intro:()=>{intro();return 'skip'},
+ export:()=>{S.lastBackup=Date.now();save();dl('pulse-backup-'+ymd(new Date())+'.json','application/json',JSON.stringify({acts:S.acts,orgs:S.orgs,jours:S.jours,moods:S.moods}));toast('Backup exported')},
+ delorg:i=>rm('orgs',i,'Organization'),
  savej:()=>{const v=($('#jt')||{}).value||S.jt;if(!v.trim())return;S.jours.unshift({id:id(),text:v.trim(),at:Date.now()});S.jt=''},
- delj:i=>{S.jours=S.jours.filter(j=>j.id!==i)},
- mic:()=>{const R=window.SpeechRecognition||window.webkitSpeechRecognition;if(!R){alert('Voice input is not supported in this browser.');return}
-  if(window.rec){window.rec.stop();window.rec=null;$('#mic').textContent='🎙';return}
+ delj:i=>rm('jours',i,'Entry'),
+ mic:()=>{const R=window.SpeechRecognition||window.webkitSpeechRecognition;if(!R){alert('Voice input is not supported in this browser.');return 'skip'}
+  if(window.rec){window.rec.stop();window.rec=null;$('#mic').textContent='🎙';return 'skip'}
   const r=window.rec=new R();r.continuous=true;r.interimResults=false;
   r.onresult=e=>{for(let i=e.resultIndex;i<e.results.length;i++)if(e.results[i].isFinal){S.jt+=e.results[i][0].transcript+' ';const t=$('#jt');if(t)t.value=S.jt;save()}};
   r.onend=()=>{window.rec=null;const m=$('#mic');if(m)m.textContent='🎙'};r.start();$('#mic').textContent='🔴';return 'skip'}
 };
 const F={
- triage:d=>S.acts.unshift({id:id(),title:d.get('t').trim(),pri:'Medium',status:'Pending',triage:true,created:Date.now()}),
- task:d=>S.acts.unshift({id:id(),title:d.get('title').trim(),dur:+d.get('dur')||30,pri:d.get('pri'),type:d.get('type'),org:d.get('org'),status:'Pending',created:Date.now()}),
+ triage:d=>S.acts.unshift({id:id(),title:d.get('t').trim(),pri:'Medium',dur:30,type:'Deep Work',status:'Pending',triage:true,created:Date.now()}),
+ task:d=>{const dur=Math.max(5,(+d.get('h')||0)*60+(+d.get('mm')||0)),dd=d.get('dd'),dt=d.get('dt');
+  const o={title:d.get('title').trim(),dur,pri:d.get('pri'),type:d.get('type'),org:d.get('org'),due:dd?dd+(dt?'T'+dt:''):'',rep:d.get('rep'),notes:d.get('notes').trim()};
+  if(S.edit){const t=S.acts.find(a=>a.id===S.edit);if(t)Object.assign(t,o);S.edit=null;toast('Task updated')}else S.acts.unshift({id:id(),...o,status:'Pending',created:Date.now()})},
  deleg:d=>S.acts.unshift({id:id(),title:d.get('title').trim(),deleg:d.get('to').trim(),fu:d.get('fu'),org:d.get('org'),pri:'Medium',type:'Delegated',status:'Waiting',created:Date.now()}),
- org:d=>S.orgs.push({id:id(),name:d.get('name').trim(),role:d.get('role').trim()})
+ org:d=>S.orgs.push({id:id(),name:d.get('name').trim(),role:d.get('role').trim(),goal:+d.get('goal')||0})
 };
 document.addEventListener('click',e=>{
  const b=e.target.closest('[data-a]');if(!b)return;
@@ -174,14 +338,40 @@ document.addEventListener('click',e=>{
 });
 document.addEventListener('change',e=>{
  const c=e.target.dataset.c;if(!c)return;
- if(c==='import'){const f=e.target.files[0];if(!f)return;const r=new FileReader();r.onload=()=>{try{const d=JSON.parse(r.result);['acts','orgs','jours'].forEach(k=>(d[k]||[]).forEach(x=>{if(!S[k].some(y=>y.id===x.id))S[k].push(x)}));S.acts.sort((a,b)=>(b.created||0)-(a.created||0));save();render();alert('Backup imported.')}catch(_){alert('That file could not be read.')}};r.readAsText(f);return}const t=S.acts.find(a=>a.id===e.target.dataset.id);
- if(c==='assign'){t.org=e.target.value;t.triage=false;t.type='Strategic'}
- if(c==='dstatus')t.status=e.target.value;
+ if(c==='import'){const f=e.target.files[0];if(!f)return;const r=new FileReader();r.onload=()=>{try{const d=JSON.parse(r.result);['acts','orgs','jours'].forEach(k=>(d[k]||[]).forEach(x=>{if(!S[k].some(y=>y.id===x.id))S[k].push(x)}));Object.keys(d.moods||{}).forEach(k=>{if(!S.moods[k])S.moods[k]=d.moods[k]});S.acts.sort((a,b)=>(b.created||0)-(a.created||0));save();render();toast('Backup imported')}catch(_){alert('That file could not be read.')}};r.readAsText(f);return}
+ if(c==='fo'){S.fo=e.target.value;const l=$('#plist');if(l)l.innerHTML=plist();return}
+ if(c==='budget'){S.budget=Math.max(1,+e.target.value||6);save();render();return}
+ const t=S.acts.find(a=>a.id===e.target.dataset.id);if(!t)return;
+ if(c==='assign'){t.org=e.target.value;t.triage=false;t.type='Strategic';t.dur=t.dur||30}
+ if(c==='dstatus'){t.status=e.target.value;t.doneAt=t.status==='Completed'?Date.now():null}
  save();render();
 });
 document.addEventListener('submit',e=>{e.preventDefault();const f=e.target.dataset.f;if(!F[f])return;F[f](new FormData(e.target));save();render()});
-document.addEventListener('input',e=>{if(e.target.id==='jt'){S.jt=e.target.value;save()}});
-setInterval(()=>{const t=$('#tm');if(t&&S.timer)t.textContent=fmt(Math.floor((Date.now()-S.timer.start)/1000))},1000);
-render();
-</script><script>if('serviceWorker' in navigator)navigator.serviceWorker.register('sw.js');</script>
-</body></html>
+document.addEventListener('input',e=>{
+ if(e.target.id==='jt'){S.jt=e.target.value;save()}
+ if(e.target.dataset.s==='q'){S.q=e.target.value;const l=$('#plist');if(l)l.innerHTML=plist()}
+});
+document.addEventListener('keydown',e=>{if(e.key==='Enter'&&e.target.id==='pin')A.unlock()});
+let hideAt=0;
+document.addEventListener('visibilitychange',()=>{if(document.hidden)hideAt=Date.now();else if(S.pin&&hideAt&&Date.now()-hideAt>60000){S.locked=true;lockUI()}});
+
+/* ---- background checks (only run while the app is open) ---- */
+setInterval(()=>{
+ if(S.timer)document.querySelectorAll('.tm').forEach(t=>t.textContent=fmt(Math.floor((Date.now()-S.timer.start)/1000)));
+},1000);
+setInterval(()=>{
+ let ch=false;
+ S.acts.forEach(a=>{const d=dueOf(a);if(!d||d.length<=10||a.status==='Completed'||a.triage)return;const k=a.id+d;
+  if(!S.notified[k]&&new Date(d).getTime()<=Date.now()){S.notified[k]=1;ch=true;notify('Pulse reminder',(a.deleg?'Follow up: ':'Due: ')+a.title);if(!S.burn)toast('⏰ '+a.title+' is due')}});
+ if(S.timer&&!S.timer.alerted){const t=S.acts.find(a=>a.id===S.timer.id);
+  if(t&&t.dur&&Date.now()-S.timer.start>=t.dur*60000){S.timer.alerted=1;ch=true;notify('Estimate reached',t.title+': '+hm(t.dur)+' is up');toast('⏱ Estimate reached: '+t.title)}}
+ if(ch){save();if(!/INPUT|TEXTAREA|SELECT/.test((document.activeElement||{}).tagName||''))render()}
+},30000);
+
+/* ---- opening screen ---- */
+function hideSplash(){const s=$('#splash');if(!s||s.dataset.h)return;s.dataset.h='1';s.classList.add('out');setTimeout(()=>s.remove(),550)}
+function intro(){const d=document.createElement('div');d.id='splash';
+ d.innerHTML='<svg viewBox="0 0 120 60" width="170" fill="none" stroke="#fff" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"><path class="ln" d="M5 32 H35 L45 12 L60 52 L72 22 L80 32 H115"/></svg><h1>PULSE</h1><p>Plan. Focus. Recover.</p><small>Tap to continue</small>';
+ d.onclick=hideSplash;document.body.appendChild(d);setTimeout(hideSplash,2300)}
+intro();render();
+</script></body></html>

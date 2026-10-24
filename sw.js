@@ -1,4 +1,4 @@
-const CACHE = 'pulse-v3'; // change to pulse-v2, v3... whenever you update index.html
+const CACHE = 'pulse-v5'; // bump (v6, v7...) whenever you update any file
 const FILES = ['./', './index.html', './manifest.json', './icon-192.png', './icon-512.png'];
 
 self.addEventListener('install', e => {
@@ -14,4 +14,9 @@ self.addEventListener('activate', e => {
 
 self.addEventListener('fetch', e => {
   e.respondWith(caches.match(e.request).then(r => r || fetch(e.request)));
+});
+
+self.addEventListener('notificationclick', e => {
+  e.notification.close();
+  e.waitUntil(clients.matchAll({ type: 'window' }).then(l => l.length ? l[0].focus() : clients.openWindow('./')));
 });
