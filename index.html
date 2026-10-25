@@ -99,10 +99,47 @@ body.burn .cd.w1,body.burn .cd.w2{background:#2c2927;color:#d6d3d1}
 input[type=range]{padding:0;height:34px}.mo{display:none}
 @media(max-width:767px){nav .x{display:none}nav .mo{display:block}}
 @media(min-width:768px){.fab{bottom:24px;right:24px}}
+
+:root{--ac:#4f46e5}
+body{font-size:calc(14px*var(--fs,1))}
+h2{font-size:21px;margin:0}h3{font-size:15px;margin:14px 0 8px}.sub{font-size:12px;margin:2px 0 12px}
+main{padding:14px 14px 96px}
+.card{border-radius:12px;padding:12px;margin-bottom:10px;box-shadow:none}
+.hero{padding:12px 14px;gap:12px}.hero svg{width:50px;height:50px}.hero h3{font-size:17px;margin:0 0 2px}.hero p{font-size:12px}
+.st{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin-bottom:10px}.st .card{padding:10px;margin:0}.st .big{font-size:22px;line-height:1.1}.st b{font-size:12px;font-weight:600;color:var(--mut)}.st .mut{display:none}
+label{display:block;margin:10px 0 4px;font-size:12px;font-weight:500}
+input,select,textarea{padding:9px 11px;margin:0 0 6px;font-size:14px;border-radius:9px}
+.btn{padding:9px 14px;font-size:14px;border-radius:9px}.btn.g{background:transparent;border:1px solid var(--bd);color:var(--tx)}
+.ic{display:inline-flex;align-items:center;justify-content:center;min-width:34px;min-height:34px;padding:4px;border-radius:9px;color:var(--mut);font-size:14px}.ic.mob{display:inline-flex!important}
+.ic svg,.ck svg,nav b svg,.mi svg{display:block}
+.tag,.pl{display:inline-flex;align-items:center;gap:4px;font-size:11px;padding:2px 8px;border-radius:99px;background:var(--bg);border:1px solid var(--bd);color:var(--mut);font-weight:500}
+.tag.dover{background:#fee2e2;color:#b91c1c;border-color:transparent}.tag.dtoday{background:#fef3c7;color:#b45309;border-color:transparent}
+.qHigh{color:#dc2626!important}.qMedium{color:#d97706!important}.qLow{color:#16a34a!important}
+.tk{display:flex;align-items:flex-start;gap:6px;flex-wrap:wrap;background:var(--card);border:1px solid var(--bd);border-radius:12px;padding:9px 6px 9px 4px;margin-bottom:8px}
+.tk.t-High{border-left:3px solid #ef4444}.tk.t-Medium{border-left:3px solid #f59e0b}.tk.t-Low{border-left:3px solid #10b981}
+.tk.run{border-color:var(--ac);box-shadow:0 0 0 1px var(--ac)}
+.ck{background:none;border:0;padding:2px;color:#cbd5e1;cursor:pointer;display:flex}.ck.on{color:#16a34a}
+.tb{flex:1;min-width:0;padding-top:2px}.tt{font-weight:600;font-size:14.5px;line-height:1.3;word-break:break-word}
+.pls{display:flex;flex-wrap:wrap;gap:4px;margin-top:5px}
+.tk .acts{display:flex;align-items:center;margin-left:auto}
+.tk .mn{display:flex;gap:6px;flex-wrap:wrap;width:100%;padding:8px 4px 2px 34px;border-top:1px solid var(--bd);margin-top:6px}
+.mi{display:inline-flex;align-items:center;gap:6px;background:var(--bg);border:1px solid var(--bd);border-radius:8px;padding:6px 10px;font:inherit;font-size:12.5px;color:var(--tx);cursor:pointer}
+nav{background:var(--card);border-top:1px solid var(--bd);padding:4px 6px calc(4px + env(safe-area-inset-bottom,0px));gap:0}
+nav button{color:var(--mut);font-size:10.5px;font-weight:500;padding:6px 2px;border-radius:10px;display:flex;flex-direction:column;align-items:center;gap:2px;background:none;flex:1 1 0;min-width:0}
+nav b{display:flex;font-weight:400}nav button.on{background:color-mix(in srgb,var(--ac) 12%,transparent);color:var(--ac)}
+@media(max-width:767px){nav .mo{display:flex}}
+.fab{width:48px;height:48px;padding:0;bottom:calc(66px + env(safe-area-inset-bottom,0px));right:14px;display:flex;align-items:center;justify-content:center;border-radius:14px}
+.sheet form{border-radius:16px 16px 0 0;padding:14px 14px 0;max-height:92vh}
+.sh{display:flex;justify-content:space-between;align-items:center}.sh b{font-size:16px}
+.ft{position:sticky;bottom:0;display:grid;grid-template-columns:1fr 2fr;gap:8px;background:var(--card);padding:10px 0 calc(10px + env(safe-area-inset-bottom,0px));margin-top:8px;border-top:1px solid var(--bd)}
+.chips{flex-wrap:nowrap;overflow-x:auto;margin:0 0 6px;padding-bottom:2px;scrollbar-width:none}.chips::-webkit-scrollbar{display:none}.chip{flex:none;padding:5px 11px;font-size:12.5px}
+.seg button,.seg span{padding:8px 0}.two{gap:8px}.cal{gap:3px}.cd{border-radius:8px;font-size:13px}.moods{display:none}
+.ban{border-radius:12px;padding:10px 12px;font-size:13px}details{border-radius:12px;padding:10px 12px}
+@media(min-width:768px){nav{border-top:0;border-right:1px solid var(--bd)}nav button{flex:none;flex-direction:row;gap:10px;font-size:14px;padding:9px 12px}.fab{bottom:24px;right:24px}.sheet form{border-radius:16px}}
 </style></head><body>
 <nav id="nav"></nav><main id="m"></main>
 <div id="toast"></div><div id="focus"></div>
-<div id="lock"><div class="lk"><div style="font-size:42px">🔒</div><h2>Pulse is locked</h2><input id="pin" type="password" inputmode="numeric" autocomplete="off" placeholder="PIN"><div id="lerr" class="mut" style="min-height:18px;margin-bottom:8px"></div><button class="btn w" data-a="unlock">Unlock</button></div></div>
+<div id="lock"><div class="lk"><svg viewBox="0 0 24 24" width="40" height="40" fill="none" stroke="#93c5fd" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" style="margin-bottom:8px"><rect x="5" y="11" width="14" height="9" rx="2.5"/><path d="M8 11V8a4 4 0 0 1 8 0v3"/></svg><h2>Pulse is locked</h2><input id="pin" type="password" inputmode="numeric" autocomplete="off" placeholder="PIN"><div id="lerr" class="mut" style="min-height:18px;margin-bottom:8px"></div><button class="btn w" data-a="unlock">Unlock</button></div></div>
 <script>
 const K='pulse-v1',$=s=>document.querySelector(s);
 const esc=s=>String(s??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
@@ -115,7 +152,9 @@ const id=()=>Date.now().toString(36)+Math.random().toString(36).slice(2,6);
 const pad=n=>String(n).padStart(2,'0');
 const ymd=d=>d.getFullYear()+'-'+pad(d.getMonth()+1)+'-'+pad(d.getDate());
 const hm=m=>{m=Math.round(m||0);const h=Math.floor(m/60),r=m%60;return h?(r?`${h}h ${r}m`:`${h}h`):`${r}m`};
-const TABS=[['dashboard','🏠','Home'],['planner','📅','Planner'],['calendar','🗓','Calendar'],['inbox','📥','Inbox'],['delegation','👥','Delegate'],['organizations','💼','Orgs'],['analytics','📊','Stats'],['journal','📓','Journal'],['more','❓','Help'],['menu','⋯','More']];
+const IP={home:'<path d="M3 10.5 12 3l9 7.5"/><path d="M5 9.5V21h14V9.5"/><path d="M10 21v-6h4v6"/>',task:'<rect x="4" y="4" width="16" height="16" rx="3"/><path d="m8.5 12 2.5 2.5 4.5-5"/>',cal:'<rect x="3.5" y="5" width="17" height="15.5" rx="3"/><path d="M8 3v4M16 3v4M3.5 10h17"/>',inbox:'<path d="M3 13h5l1.5 3h5L16 13h5"/><path d="M5.5 5h13L21 13v6a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1v-6z"/>',users:'<circle cx="9" cy="8" r="3.5"/><path d="M2.5 20c0-3.6 2.9-6 6.5-6s6.5 2.4 6.5 6"/><path d="M16 4.5a3.5 3.5 0 0 1 0 7M18 14.5c2.3.6 3.5 2.5 3.5 5.5"/>',brief:'<rect x="3" y="7" width="18" height="13" rx="2.5"/><path d="M9 7V5.5A1.5 1.5 0 0 1 10.5 4h3A1.5 1.5 0 0 1 15 5.5V7M3 13h18"/>',chart:'<path d="M5 20V11M12 20V4M19 20v-6"/>',book:'<path d="M6 3h12a1 1 0 0 1 1 1v16a1 1 0 0 1-1 1H6z"/><path d="M6 3v18M10 8h5"/>',help:'<circle cx="12" cy="12" r="9"/><path d="M9.5 9.5a2.5 2.5 0 1 1 3.5 2.3c-.7.4-1 1-1 1.7M12 17h.01"/>',dots:'<circle cx="5" cy="12" r="1.3"/><circle cx="12" cy="12" r="1.3"/><circle cx="19" cy="12" r="1.3"/>',moon:'<path d="M20 14.5A8 8 0 0 1 9.5 4a8 8 0 1 0 10.5 10.5z"/>',heart:'<path d="M12 20s-7-4.5-7-10a4 4 0 0 1 7-2.5A4 4 0 0 1 19 10c0 5.5-7 10-7 10z"/>',plus:'<path d="M12 5v14M5 12h14"/>',play:'<path d="M7 4.5v15l12-7.5z"/>',stop:'<rect x="6" y="6" width="12" height="12" rx="2"/>',circle:'<circle cx="12" cy="12" r="9"/>',checkc:'<circle cx="12" cy="12" r="9"/><path d="m8 12.3 2.8 2.8L16.5 9"/>',pencil:'<path d="M4 20h4L19 9l-4-4L4 16z"/>',trash:'<path d="M4 7h16M9 7V4h6v3M6 7l1 13h10l1-13"/>',calp:'<rect x="3.5" y="5" width="17" height="15.5" rx="3"/><path d="M8 3v4M16 3v4M12 11v6M9 14h6"/>',arrow:'<path d="M5 12h14M13 6l6 6-6 6"/>',copy:'<rect x="8" y="8" width="12" height="12" rx="2.5"/><path d="M16 8V6a2 2 0 0 0-2-2H6a2 2 0 0 0-2 2v8a2 2 0 0 0 2 2h2"/>',repeat:'<path d="M17 3l3 3-3 3M4 11V9a3 3 0 0 1 3-3h13M7 21l-3-3 3-3M20 13v2a3 3 0 0 1-3 3H4"/>',x:'<path d="M6 6l12 12M18 6 6 18"/>',chl:'<path d="m15 5-7 7 7 7"/>',lock:'<rect x="5" y="11" width="14" height="9" rx="2.5"/><path d="M8 11V8a4 4 0 0 1 8 0v3"/>',spark:'<path d="M12 3l1.8 5.2L19 10l-5.2 1.8L12 17l-1.8-5.2L5 10l5.2-1.8z"/>',clock:'<circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/>',mic:'<rect x="9" y="3" width="6" height="11" rx="3"/><path d="M5 11a7 7 0 0 0 14 0M12 18v3"/>',user:'<circle cx="12" cy="8" r="3.5"/><path d="M5 20c0-3.5 3-6 7-6s7 2.5 7 6"/>',chr:'<path d="m9 5 7 7-7 7"/>'};
+const ic=(n,s=20)=>`<svg viewBox="0 0 24 24" width="${s}" height="${s}" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">${IP[n]||''}</svg>`;
+const TABS=[['dashboard','home','Home'],['planner','task','Planner'],['calendar','cal','Calendar'],['inbox','inbox','Inbox'],['delegation','users','Delegate'],['organizations','brief','Orgs'],['analytics','chart','Stats'],['journal','book','Journal'],['more','help','Help'],['menu','dots','More']];
 const XT=['delegation','organizations','analytics','journal','more'];
 let msgI=0;
 const msg=()=>{const n=S.acts.filter(a=>a.status==='Completed'&&!a.triage).length,w=n+' task'+(n===1?'':'s');
@@ -126,7 +165,7 @@ const done=a=>a.status==='Completed'&&!a.triage;
 const visible=()=>S.acts.filter(a=>!a.triage&&!a.deleg).filter(a=>!(S.burn&&a.status!=='Completed')||a.pri==='High');
 const fmt=s=>String(Math.floor(s/60)).padStart(2,'0')+':'+String(s%60).padStart(2,'0');
 const orgOpts=(sel,ph)=>`<option value="">${ph}</option>`+S.orgs.map(o=>`<option value="${o.id}" ${o.id===sel?'selected':''}>${esc(o.name)}</option>`).join('');
-const empty=t=>`<div class="card empty"><div style="font-size:34px;margin-bottom:6px">✨</div>${t}</div>`;
+const empty=t=>`<div class="card empty"><div style="margin-bottom:8px;color:var(--mut);opacity:.6">${ic('spark',30)}</div>${t}</div>`;
 const dl=(n,t,d)=>{const a=document.createElement('a');a.href=URL.createObjectURL(new Blob([d],{type:t}));a.download=n;a.click();setTimeout(()=>URL.revokeObjectURL(a.href),3000)};
 const hash=async p=>{try{const b=await crypto.subtle.digest('SHA-256',new TextEncoder().encode('pulse'+p));return [...new Uint8Array(b)].map(x=>x.toString(16).padStart(2,'0')).join('')}catch(e){return 'x'+p.split('').reduce((a,c)=>(a*31+c.charCodeAt(0))>>>0,7)}};
 
@@ -135,7 +174,7 @@ const dueOf=a=>a.deleg?a.fu:a.due;
 function dstate(a){if(a.status==='Completed'||a.triage)return '';const d=dueOf(a);if(!d)return '';const t=ymd(new Date()),day=d.slice(0,10);
  if(day<t)return 'over';if(day>t)return 'soon';if(d.length>10&&new Date(d).getTime()<Date.now())return 'over';return 'today'}
 const fmtDue=d=>{const dt=new Date(d.length>10?d:d+'T00:00');return dt.toLocaleDateString('en-US',{month:'short',day:'numeric'})+(d.length>10?' '+dt.toLocaleTimeString('en-US',{hour:'numeric',minute:'2-digit'}):'')};
-const dueTag=a=>{const s=dstate(a);return s?`<span class="tag d${s}">${s==='over'?'⚠ Overdue · ':s==='today'?'Today · ':''}${fmtDue(dueOf(a))}</span>`:''};
+const dueTag=a=>{const s=dstate(a);return s?`<span class="tag d${s}">${s==='over'?'Overdue · ':s==='today'?'Today · ':''}${fmtDue(dueOf(a))}</span>`:''};
 function rem(){const l=S.acts.filter(a=>!a.triage&&a.status!=='Completed'&&dueOf(a)&&(!S.burn||a.pri==='High'));return{over:l.filter(a=>dstate(a)==='over'),today:l.filter(a=>dstate(a)==='today')}}
 function badge(){try{const r=rem(),n=S.burn?0:r.over.length+r.today.length;if(navigator.setAppBadge){n?navigator.setAppBadge(n):navigator.clearAppBadge()}}catch(e){}}
 function notify(t,b){if(S.burn)return;try{if('Notification' in window&&Notification.permission==='granted'){if(navigator.serviceWorker&&navigator.serviceWorker.ready)navigator.serviceWorker.ready.then(r=>r.showNotification(t,{body:b,icon:'icon-192.png'})).catch(()=>new Notification(t,{body:b}));else new Notification(t,{body:b})}}catch(e){}}
@@ -150,17 +189,21 @@ function rm(k,i,label){const x=S[k].findIndex(y=>y.id===i);if(x<0)return;const [
 
 /* ---- views ---- */
 function taskRow(t,full){
- const run=S.timer&&S.timer.id===t.id,c=t.status==='Completed';
- return `<div class="card row t-${t.pri} ${run?'run':''}" style="flex-wrap:wrap"><div>
- <div class="${c?'done':''}">${t.org?`<span class="dot" style="background:${orgCol(t.org)}"></span>`:''}<b>${esc(t.title)}</b> <span class="tag ${t.pri}">${t.pri}</span>${t.rep?` <span class="tag">🔁 ${t.rep}</span>`:''}</div>
- <div class="mut">${full?`Est ${hm(t.dur||30)}${t.actual?` · Logged ${hm(t.actual)}`:''} · ${esc(t.type||'')} · ${esc(orgName(t.org))} `:''}${dueTag(t)}</div>
- ${full&&t.notes?`<div class="mut" style="margin-top:4px">📝 ${esc(t.notes)}</div>`:''}${full&&t.subs&&t.subs.length?subsH(t):''}</div>
- <div class="acts"><button class="ic" data-a="toggle" data-id="${t.id}">${c?'✅':'⚪'}</button>
- ${full&&!c?`<button class="ic" data-a="timer" data-id="${t.id}">${run?`⏹ <span class="tm">${fmt(Math.floor((Date.now()-S.timer.start)/1000))}</span>`:'▶'}</button>`:''}
- ${full?`<button class="ic" data-a="menu" data-id="${t.id}">⋯</button>`:''}</div>${full&&S.menu===t.id?`<div class="mn"><button class="btn g" data-a="edit" data-id="${t.id}">✏️ Edit</button>${dueOf(t)||tdays(t).length?`<button class="btn g" data-a="ics" data-id="${t.id}">📅 Calendar</button>`:''}<button class="btn g" data-a="tmrw" data-id="${t.id}">➡ Tomorrow</button><button class="btn g" data-a="tplsave" data-id="${t.id}">💾 Template</button><button class="btn g" data-a="del" data-id="${t.id}">🗑 Delete</button></div>`:''}</div>`;
+ const run=S.timer&&S.timer.id===t.id,c=t.status==='Completed',dg=dueTag(t);
+ const m=[`<span class="pl q${t.pri}">${t.pri}</span>`];
+ if(full)m.push(`<span class="pl">${hm(t.dur||30)}${t.actual?' / '+hm(t.actual):''}</span>`);
+ if(t.org)m.push(`<span class="pl"><i class="dot" style="background:${orgCol(t.org)}"></i>${esc(orgName(t.org))}</span>`);
+ if(t.rep)m.push(`<span class="pl">${ic('repeat',11)}${t.rep}</span>`);
+ if(dg)m.push(dg);
+ const mi=[['edit','pencil','Edit'],dueOf(t)||tdays(t).length?['ics','calp','Calendar']:null,['tmrw','arrow','Tomorrow'],['tplsave','copy','Template'],['del','trash','Delete']].filter(Boolean);
+ return `<div class="tk t-${t.pri} ${run?'run':''}"><button class="ck ${c?'on':''}" data-a="toggle" data-id="${t.id}" aria-label="Complete">${ic(c?'checkc':'circle',22)}</button>
+ <div class="tb"><div class="tt ${c?'done':''}">${esc(t.title)}</div><div class="pls">${m.join('')}</div>${full&&t.notes?`<div class="mut" style="margin-top:5px">${esc(t.notes)}</div>`:''}${full&&t.subs&&t.subs.length?subsH(t):''}</div>
+ <div class="acts">${full&&!c?`<button class="ic" data-a="timer" data-id="${t.id}">${run?`${ic('stop',16)}<span class="tm" style="margin-left:4px">${fmt(Math.floor((Date.now()-S.timer.start)/1000))}</span>`:ic('play',17)}</button>`:''}${full?`<button class="ic" data-a="menu" data-id="${t.id}" aria-label="More">${ic('dots',18)}</button>`:''}</div>
+ ${full&&S.menu===t.id?`<div class="mn">${mi.map(([a,i,l])=>`<button class="mi" data-a="${a}" data-id="${t.id}">${ic(i,15)}${l}</button>`).join('')}</div>`:''}</div>`;
 }
+
 const timerBar=()=>{if(!S.timer)return '';const t=S.acts.find(a=>a.id===S.timer.id);
- return t?`<div class="tbar"><span>⏱ ${esc(t.title)} · <b class="tm">${fmt(Math.floor((Date.now()-S.timer.start)/1000))}</b></span><span><button class="btn g" style="padding:6px 12px" data-a="focus">Focus</button> <button class="btn" style="background:#fff;color:var(--ac);padding:6px 14px" data-a="timer" data-id="${t.id}">Stop</button></span></div>`:''};
+ return t?`<div class="tbar"><span style="display:inline-flex;align-items:center;gap:6px">${ic('clock',15)}${esc(t.title)} · <b class="tm">${fmt(Math.floor((Date.now()-S.timer.start)/1000))}</b></span><span><button class="btn g" style="padding:6px 12px" data-a="focus">Focus</button> <button class="btn" style="background:#fff;color:var(--ac);padding:6px 14px" data-a="timer" data-id="${t.id}">Stop</button></span></div>`:''};
 function plist(){
  let l=visible().filter(a=>(!S.hc||a.status!=='Completed'||S.q)&&(!S.fo||a.org===S.fo)&&(!S.q||(a.title+' '+(a.notes||'')).toLowerCase().includes(S.q.toLowerCase())));
  l=l.slice().sort((a,b)=>(a.status==='Completed')-(b.status==='Completed')||(dueOf(a)||'9999').localeCompare(dueOf(b)||'9999'));
@@ -168,7 +211,7 @@ function plist(){
 const sum=t=>{const p=t.split(/[.!?\n]+/).map(x=>x.trim()).filter(Boolean);
  return{w:p.filter(x=>/\b(finish|complet|done|shipped|launch|solved|won|closed|sent|achiev)/i.test(x)),a:p.filter(x=>/\b(need to|have to|must|tomorrow|to-?do|follow up|remind|next)\b/i.test(x))}};
 const list=(h,c,a)=>a.length?`<div style="margin-top:8px"><b style="color:${c};font-size:13px">${h}</b><ul style="margin:4px 0;padding-left:20px">${a.map(x=>`<li>${esc(x)}</li>`).join('')}</ul></div>`:'';
-const EM=['😫','😕','😐','🙂','😄'];
+const EM=['Drained','Low','Okay','Good','Great'];
 const PAL=['#3b82f6','#10b981','#f59e0b','#8b5cf6','#ef4444','#14b8a6','#ec4899','#64748b'];
 const orgCol=i=>(S.orgs.find(o=>o.id===i)||{}).color||'#94a3b8';
 const moodOf=d=>S.mp[d]!=null?S.mp[d]:(S.moods[d]?S.moods[d]*20-10:null);
@@ -183,7 +226,7 @@ const moodPat=()=>{const ks=[...new Set([...Object.keys(S.mp),...Object.keys(S.m
  const ok=wm.map((v,i)=>[v,i]).filter(x=>x[0]!=null).sort((a,b)=>b[0]-a[0]);
  const txt=ks.length<7||ok.length<3?'Log your mood for about a week to see patterns.':`Your energy tends to be highest on ${WN[ok[0][1]]} (${ok[0][0]}%) and lowest on ${WN[ok[ok.length-1][1]]} (${ok[ok.length-1][0]}%). Consider planning Deep Work for your higher days.`;
  return `<div class="card"><b>Mood patterns</b><div style="display:flex;gap:6px;align-items:flex-end;height:80px;margin:10px 0 4px">${wm.map(v=>`<div style="flex:1;text-align:center;font-size:10px">${v!=null?v+'%':''}<div style="height:${v==null?2:Math.max(4,v*.55)}px;background:var(--ac);border-radius:4px;opacity:${v==null?.2:1}"></div></div>`).join('')}</div><div style="display:flex;gap:6px">${WN.map(w=>`<div class="mut" style="flex:1;text-align:center">${w[0]}</div>`).join('')}</div><p style="margin:10px 0 0;font-size:14px">${txt}</p><div class="mut">Based only on your own entries. Not a medical measure.</div></div>`};
-const tplCard=()=>S.tpl.length?`<details style="margin-bottom:12px"><summary>📑 Templates (${S.tpl.length})</summary>${S.tpl.map(g=>`<div class="row" style="margin-top:10px"><div><b>${esc(g.name)}</b><div class="mut">${g.items.length} task${g.items.length>1?'s':''}</div></div><button class="btn" data-a="tpladd" data-id="${g.id}">Add</button><button class="ic" data-a="tpldel" data-id="${g.id}">🗑</button></div>`).join('')}</details>`:'';
+const tplCard=()=>S.tpl.length?`<details style="margin-bottom:12px"><summary style="display:flex;align-items:center;gap:8px">${ic('copy',15)} Templates (${S.tpl.length})</summary>${S.tpl.map(g=>`<div class="row" style="margin-top:10px"><div><b>${esc(g.name)}</b><div class="mut">${g.items.length} task${g.items.length>1?'s':''}</div></div><button class="btn" data-a="tpladd" data-id="${g.id}">Add</button><button class="ic" data-a="tpldel" data-id="${g.id}">${ic('trash',17)}</button></div>`).join('')}</details>`:'';
 const V={
 dashboard(){
  const d=S.acts.filter(done),h=(d.reduce((a,t)=>a+mins(t),0)/60).toFixed(1),w=S.acts.filter(a=>a.deleg&&a.status!=='Completed').length;
@@ -191,23 +234,23 @@ dashboard(){
  const t0=new Date().setHours(0,0,0,0),dt=S.acts.filter(a=>done(a)&&(a.doneAt||0)>=t0).length,pend=visible().filter(a=>a.status!=='Completed').length,tot=dt+pend,pc=tot?dt/tot:0,hr=new Date().getHours(),gr=hr<12?'Good morning':hr<18?'Good afternoon':'Good evening',R=26,C=2*Math.PI*R;
  const hero=`<div class="card hero"><svg width="68" height="68" viewBox="0 0 68 68"><circle cx="34" cy="34" r="${R}" fill="none" stroke="rgba(255,255,255,.3)" stroke-width="7"/><circle cx="34" cy="34" r="${R}" fill="none" stroke="#fff" stroke-width="7" stroke-linecap="round" stroke-dasharray="${C*pc} ${C}" transform="rotate(-90 34 34)"/><text x="34" y="39" text-anchor="middle" font-size="14" font-weight="700" fill="#fff">${Math.round(pc*100)}%</text></svg><div><h3>${gr}</h3><p>${dt} done today · ${pend} to go</p></div></div>`;
  const r=rem(),n=r.over.length+r.today.length;
- const rb=n?`<div class="ban"><b>🔔 ${r.over.length?r.over.length+' overdue':''}${r.over.length&&r.today.length?' · ':''}${r.today.length?r.today.length+' due today':''}</b>${[...r.over,...r.today].slice(0,4).map(a=>`<div class="mut" style="margin-top:4px">${a.deleg?'👥 Follow up with '+esc(a.deleg)+': ':'• '}${esc(a.title)} ${dueTag(a)}</div>`).join('')}</div>`:'';
+ const rb=n?`<div class="ban"><b>${r.over.length?r.over.length+' overdue':''}${r.over.length&&r.today.length?' · ':''}${r.today.length?r.today.length+' due today':''}</b>${[...r.over,...r.today].slice(0,4).map(a=>`<div class="mut" style="margin-top:4px">${a.deleg?'Follow up with '+esc(a.deleg)+': ':'• '}${esc(a.title)} ${dueTag(a)}</div>`).join('')}</div>`:'';
  const days=Math.floor((Date.now()-(S.lastBackup||S.since))/864e5);
- const bk=(S.acts.length+S.jours.length>0&&days>=7)?`<div class="ban">💾 It's been ${days} days since your last backup. <button class="btn" style="padding:6px 12px;margin-left:6px" data-a="export">Export now</button></div>`:'';
+ const bk=(S.acts.length+S.jours.length>0&&days>=7)?`<div class="ban">It's been ${days} days since your last backup. <button class="btn" style="padding:6px 12px;margin-left:6px" data-a="export">Export now</button></div>`:'';
  const td=ymd(new Date()),mv=S.moods[td];
  const low=(()=>{const v=Object.keys(S.mp).concat(Object.keys(S.moods)).filter((k,i,a)=>a.indexOf(k)===i).sort().slice(-3).map(moodOf);return v.length===3&&v.every(x=>x<40)})();
  const sug=low&&!S.burn?`<div class="ban">Your last 3 check-ins were low. <button class="btn" style="padding:6px 12px;margin-left:6px" data-a="burn">Try Burnout Buffer</button></div>`:'';
  const mp=moodOf(td),fi=mp==null?3:Math.min(4,Math.floor(mp/20));
- const ci=`<div class="card"><div class="row"><b>How are you feeling?</b><b>${mp==null?'—':EM[fi]+' '+mp+'%'}</b></div><input type="range" min="0" max="100" step="5" value="${mp==null?50:mp}" data-c="mood"><div class="mut" style="display:flex;justify-content:space-between"><span>0% drained</span><span>100% great</span></div><div class="moods">${EM.map((e,i)=>`<button class="${mp!=null&&fi===i?'on':''}" data-a="mood" data-id="${i*20+10}">${e}</button>`).join('')}</div></div>`;
+ const ci=`<div class="card"><div class="row"><b>How are you feeling?</b><b>${mp==null?'—':mp+'% · '+['Drained','Low','Okay','Good','Great'][fi]}</b></div><input type="range" min="0" max="100" step="5" value="${mp==null?50:mp}" data-c="mood"><div class="mut" style="display:flex;justify-content:space-between"><span>0% drained</span><span>100% great</span></div></div>`;
  const mid=S.burn?`<div class="card" style="text-align:center"><div class="breathe"></div><div class="mut">Breathe in… and out. Nothing else needs you right now.</div></div>`:
- `<div class="grid"><div class="card"><div class="big">${d.length}</div><b>Completed</b><div class="mut">All tasks</div></div><div class="card"><div class="big">${h}h</div><b>Time logged</b><div class="mut">Productive hours</div></div><div class="card"><div class="big">${w}</div><b>Waiting on</b><div class="mut">Pending delegations</div></div></div>`;
- return hero+rb+(stale().length?`<div class="ban">📋 ${stale().length} unfinished from earlier days. <button class="btn" style="padding:6px 12px;margin-left:6px" data-a="rollall">Move to tomorrow</button></div>`:'')+bk+sug+ci+mid+`<h3>${S.burn?'Only what matters':"Today's focus"}</h3>${f.length?f.map(t=>taskRow(t,false)).join(''):empty('Nothing pending. Add a task in the Planner.')}`;
+ `<div class="st"><div class="card"><div class="big">${d.length}</div><b>Completed</b><div class="mut">All tasks</div></div><div class="card"><div class="big">${h}h</div><b>Time logged</b><div class="mut">Productive hours</div></div><div class="card"><div class="big">${w}</div><b>Waiting on</b><div class="mut">Pending delegations</div></div></div>`;
+ return hero+rb+(stale().length?`<div class="ban">${stale().length} unfinished from earlier days. <button class="btn" style="padding:6px 12px;margin-left:6px" data-a="rollall">Move to tomorrow</button></div>`:'')+bk+sug+ci+mid+`<h3>${S.burn?'Only what matters':"Today's focus"}</h3>${f.length?f.map(t=>taskRow(t,false)).join(''):empty('Nothing pending. Add a task in the Planner.')}`;
 },
 inbox(){
  const l=S.acts.filter(a=>a.triage);
  return `<form data-f="triage" class="card"><input name="t" placeholder="Quick capture: what's on your mind?" required><button class="btn w">Drop in inbox</button></form>
  ${l.length?l.map(t=>`<div class="card"><b>${esc(t.title)}</b><div class="row" style="margin-top:8px"><select data-c="assign" data-id="${t.id}" style="margin:0">${orgOpts('','Assign org…')}</select>
- <button class="btn" data-a="plan" data-id="${t.id}">To planner</button><button class="ic" data-a="del" data-id="${t.id}">🗑</button></div></div>`).join(''):empty('Inbox zero. Nice work!')}`;
+ <button class="btn" data-a="plan" data-id="${t.id}">To planner</button><button class="ic" data-a="del" data-id="${t.id}">${ic('trash',17)}</button></div></div>`).join(''):empty('Inbox zero. Nice work!')}`;
 },
 planner(){
  const e=S.edit?S.acts.find(a=>a.id===S.edit):null,v=(k,d='')=>e&&e[k]!=null?e[k]:d;
@@ -215,22 +258,22 @@ planner(){
  const plan=load(ymd(new Date())),bud=S.budget*60;
  const pr=v('pri','Medium'),ty=v('type','Deep Work'),wd=e?tdays(e):[],dys=[...new Set([...Array.from({length:14},(_,i)=>ymd(new Date(Date.now()+i*864e5))),...wd])].sort();
  const typeOpts=['Deep Work','Strategic','Admin/Operations','Meeting'].map(x=>`<option ${x===ty?'selected':''}>${x}</option>`).join('');
- return `<div class="card"><div class="row"><b>Today's load</b><span class="mut">${hm(plan)} of ${hm(bud)}${plan>bud?' ⚠ over budget':''}</span></div><div class="bar" style="margin-bottom:4px"><i style="width:${Math.min(100,plan/bud*100)}%;${plan>bud?'background:#ef4444':''}"></i></div><div class="mut">Counts tasks scheduled for today or due today. Change your budget under Help → Settings.</div></div>
- <div class="sheet ${S.sheet||e?'open':''}"><form data-f="task" class="card"><b>${e?'Edit task':'Plan activity'}</b><br><label>Title</label><input name="title" required value="${esc(v('title'))}" placeholder="What needs doing?">
+ return `<div class="card"><div class="row"><b>Today's load</b><span class="mut">${hm(plan)} of ${hm(bud)}${plan>bud?' · over budget':''}</span></div><div class="bar" style="margin-bottom:4px"><i style="width:${Math.min(100,plan/bud*100)}%;${plan>bud?'background:#ef4444':''}"></i></div><div class="mut">Counts tasks scheduled for today or due today. Change your budget under Help → Settings.</div></div>
+ <div class="sheet ${S.sheet||e?'open':''}"><form data-f="task" class="card"><div class="sh"><b>${e?'Edit task':'New task'}</b><button type="button" class="ic" data-a="cancel" aria-label="Close">${ic('x',18)}</button></div><label>Title</label><input name="title" required value="${esc(v('title'))}" placeholder="What needs doing?">
  <label>Estimate</label><div class="two"><input name="h" type="number" min="0" max="99" value="${H}" placeholder="hours"><input name="mm" type="number" min="0" max="59" value="${M}" placeholder="minutes"></div>
  <div class="chips">${[15,30,60,90,120].map(m=>`<button type="button" class="chip" data-a="est" data-id="${m}">${hm(m)}</button>`).join('')}</div>
  <label>Priority</label><div class="seg"><label class="pH"><input type="radio" name="pri" value="High" ${pr==='High'?'checked':''}><span>High</span></label><label class="pM"><input type="radio" name="pri" value="Medium" ${pr==='Medium'?'checked':''}><span>Med</span></label><label class="pL"><input type="radio" name="pri" value="Low" ${pr==='Low'?'checked':''}><span>Low</span></label></div>
- <label>Type</label><select name="type">${typeOpts}</select>
- <label>Organization</label><select name="org">${orgOpts(v('org'),'Personal / none')}</select>
+ <div class="two"><div><label>Type</label><select name="type">${typeOpts}</select></div>
+ <div><label>Organization</label><select name="org">${orgOpts(v('org'),'Personal / none')}</select></div></div>
  <label>Due date and time (optional)</label><div class="two"><input name="dd" type="date" value="${dd}"><input name="dt" type="time" value="${dtm}"></div>
  <div class="chips"><button type="button" class="chip" data-a="dueq" data-id="0">Today</button><button type="button" class="chip" data-a="dueq" data-id="1">Tomorrow</button><button type="button" class="chip" data-a="dueq" data-id="7">Next week</button><button type="button" class="chip" data-a="dueq" data-id="x">Clear</button></div>
  <label>Work days (when you'll do it)</label><div class="chips">${dys.map(k=>`<button type="button" class="chip ${wd.includes(k)?'on':''}" data-a="wd" data-id="${k}">${new Date(k+'T00:00').toLocaleDateString('en-US',{weekday:'short',day:'numeric'})}</button>`).join('')}</div><input type="hidden" name="wd" value="${wd.join(',')}">
  <label>Subtasks (one per line)</label><textarea name="subs" rows="2">${esc((e&&e.subs?e.subs:[]).map(x=>x.t).join('\n'))}</textarea>
  <label>Repeat</label><select name="rep">${['','daily','weekly','monthly'].map(x=>`<option value="${x}" ${x===v('rep','')?'selected':''}>${x||'Does not repeat'}</option>`).join('')}</select>
  <label>Notes (optional)</label><textarea name="notes" rows="2" placeholder="Details, links, next step…">${esc(v('notes'))}</textarea>
- <button class="btn w">${e?'Save changes':'Add task'}</button><button type="button" class="btn g w" style="margin-top:8px" data-a="cancel">Cancel</button></form></div>
- ${tplCard()}<form data-f="quick" class="card" style="padding:10px"><input name="q" style="margin:0" placeholder='⚡ Quick add: Call Maria tomorrow 3pm 30m #finance !high'></form>
- <div class="two"><input data-s="q" value="${esc(S.q)}" placeholder="🔍 Search tasks"><select data-c="fo">${orgOpts(S.fo,'All organizations')}</select></div>
+ <div class="ft"><button type="button" class="btn g" data-a="cancel">Cancel</button><button class="btn">${e?'Save changes':'Add task'}</button></div></form></div>
+ ${tplCard()}<form data-f="quick" class="card" style="padding:10px"><input name="q" style="margin:0" placeholder='Quick add: Call Maria tomorrow 3pm 30m #finance !high'></form>
+ <div class="two"><input data-s="q" value="${esc(S.q)}" placeholder="Search tasks"><select data-c="fo">${orgOpts(S.fo,'All organizations')}</select></div>
  <div id="plist">${plist()}</div><button class="btn g w" data-a="hc">${S.hc?'Show completed tasks':'Hide completed tasks'}</button>`;
 },
 delegation(){
@@ -238,16 +281,16 @@ delegation(){
  return `<form data-f="deleg" class="card"><b>Delegate task</b><br><label>Title</label><input name="title" required>
  <label>Delegated to</label><input name="to" required placeholder="Name or role"><label>Follow-up date</label><input name="fu" type="date" required>
  <label>Organization</label><select name="org">${orgOpts('','Personal / none')}</select><button class="btn w">Assign</button></form>
- ${l.length?l.map(t=>`<div class="card row"><div><b class="${t.status==='Completed'?'done':''}">${esc(t.title)}</b><div class="mut">👤 ${esc(t.deleg)} · ${esc(orgName(t.org))} ${dueTag(t)}${dstate(t)?'':' · Follow up '+esc(t.fu)}</div></div>
+ ${l.length?l.map(t=>`<div class="card row"><div><b class="${t.status==='Completed'?'done':''}">${esc(t.title)}</b><div class="mut"><span style="vertical-align:-2px">${ic('user',13)}</span> ${esc(t.deleg)} · ${esc(orgName(t.org))} ${dueTag(t)}${dstate(t)?'':' · Follow up '+esc(t.fu)}</div></div>
  <select data-c="dstatus" data-id="${t.id}" style="width:auto;margin:0"><option value="Waiting" ${t.status==='Waiting'?'selected':''}>Waiting</option><option value="Completed" ${t.status==='Completed'?'selected':''}>Resolved</option></select>
- <button class="ic" data-a="ics" data-id="${t.id}">📅</button><button class="ic" data-a="del" data-id="${t.id}">🗑</button></div>`).join(''):empty('Nothing delegated.')}`;
+ <button class="ic" data-a="ics" data-id="${t.id}">${ic('calp',17)}</button><button class="ic" data-a="del" data-id="${t.id}">${ic('trash',17)}</button></div>`).join(''):empty('Nothing delegated.')}`;
 },
 organizations(){
  const wk=Date.now()-7*864e5;
  return `<form data-f="org" class="card"><b>Add affiliation</b><br><label>Organization name</label><input name="name" required><label>Your role</label><input name="role" required><label>Color</label><div class="sw">${PAL.map((c,i)=>`<label><input type="radio" name="color" value="${c}" ${i===0?'checked':''}><span style="background:${c}"></span></label>`).join('')}</div><label>Weekly time goal in hours (optional)</label><input name="goal" type="number" min="0" step="0.5" placeholder="e.g. 8"><button class="btn w">Create profile</button></form>
  ${S.orgs.length?S.orgs.map(o=>{const t=S.acts.filter(a=>a.org===o.id&&!a.triage),c=t.filter(a=>a.status==='Completed').length,p=t.length?c/t.length*100:0;
  const wm=S.acts.filter(a=>a.org===o.id&&done(a)&&!a.deleg&&(a.doneAt||0)>=wk).reduce((s,a)=>s+mins(a),0);
- return `<div class="card"><div class="row"><div><span class="dot" style="background:${o.color||'#94a3b8'}"></span><b>${esc(o.name)}</b> <span class="tag">${esc(o.role)}</span></div><button class="ic" data-a="delorg" data-id="${o.id}">🗑</button></div>
+ return `<div class="card"><div class="row"><div><span class="dot" style="background:${o.color||'#94a3b8'}"></span><b>${esc(o.name)}</b> <span class="tag">${esc(o.role)}</span></div><button class="ic" data-a="delorg" data-id="${o.id}">${ic('trash',17)}</button></div>
  <div class="mut" style="margin-top:8px">Completion ${c}/${t.length}</div><div class="bar"><i style="width:${p}%"></i></div>
  ${o.goal?`<div class="mut">Last 7 days: ${hm(wm)} of ${o.goal}h goal</div><div class="bar"><i style="width:${Math.min(100,wm/(o.goal*60)*100)}%"></i></div>`:''}</div>`}).join(''):empty('No organizations yet.')}`;
 },
@@ -271,13 +314,13 @@ analytics(){
  const slip=S.acts.filter(a=>!a.triage&&a.status!=='Completed'&&dstate(a)==='over').length,wait=S.acts.filter(a=>a.deleg&&a.status!=='Completed').length;
  const mv=[6,5,4,3,2,1,0].map(k=>moodOf(ymd(new Date(Date.now()-k*864e5)))),mvv=mv.filter(x=>x!=null),avg=mvv.length?Math.round(mvv.reduce((a,b)=>a+b,0)/mvv.length):null;
  const review=`<div class="card"><b>Weekly review (last 7 days)</b><div class="grid" style="margin:10px 0"><div><div class="big">${wd.length}</div><div class="mut">tasks done</div></div><div><div class="big">${hm(wmin)}</div><div class="mut">time on done tasks</div></div><div><div class="big">${slip}</div><div class="mut">overdue</div></div><div><div class="big">${wait}</div><div class="mut">delegations waiting</div></div></div>
- <div class="mut">Energy: ${mv.map(x=>x==null?'·':EM[Math.min(4,Math.floor(x/20))]).join(' ')}${avg!=null?` · average ${avg}%`:''}</div>${list('Wins','#059669',wd.slice(0,5).map(a=>a.title))}</div>`;
+ <div class="mut">Energy: ${mv.map(x=>x==null?'–':x+'%').join(' · ')}${avg!=null?` · average ${avg}%`:''}</div>${list('Wins','#059669',wd.slice(0,5).map(a=>a.title))}</div>`;
  return review+moodPat()+`<div class="card"><b>Estimate vs. actual</b><p style="margin:6px 0 0">${ins}</p></div><div class="card"><b>Where your time goes</b><br><br>${donut(sorted(ty))}</div><div class="card"><b>Minutes completed, last 7 days</b>${week}</div><div class="card"><b>Time by organization</b><br><br>${orgBars}</div>`;
 },
 journal(){
- return `<div class="card"><div class="row"><b>End-of-day brain dump</b><button class="ic" data-a="mic" id="mic">🎙</button></div>
+ return `<div class="card"><div class="row"><b>End-of-day brain dump</b><button class="ic" data-a="mic" id="mic">${ic('mic',18)}</button></div>
  <textarea id="jt" rows="7" placeholder="What did you accomplish? Any blockers? What's next?">${esc(S.jt)}</textarea><button class="btn w" data-a="savej">Save entry</button></div>
- ${S.jours.length?S.jours.slice(0,10).map(j=>`<div class="card"><div class="row"><span class="mut">${new Date(j.at).toLocaleString()}</span><button class="ic" data-a="delj" data-id="${j.id}">🗑</button></div><p style="white-space:pre-wrap">${esc(j.text)}</p>${(x=>list('Wins','#059669',x.w)+list('Next steps','#2563eb',x.a)+((x.w.length||x.a.length)?'<div class="mut">Sorted by keywords on your device, not AI.</div>':''))(sum(j.text))}</div>`).join(''):empty('No entries yet.')}`;
+ ${S.jours.length?S.jours.slice(0,10).map(j=>`<div class="card"><div class="row"><span class="mut">${new Date(j.at).toLocaleString()}</span><button class="ic" data-a="delj" data-id="${j.id}">${ic('trash',17)}</button></div><p style="white-space:pre-wrap">${esc(j.text)}</p>${(x=>list('Wins','#059669',x.w)+list('Next steps','#2563eb',x.a)+((x.w.length||x.a.length)?'<div class="mut">Sorted by keywords on your device, not AI.</div>':''))(sum(j.text))}</div>`).join(''):empty('No entries yet.')}`;
 },
 calendar(){
  const b=new Date();b.setDate(1);b.setMonth(b.getMonth()+S.cm);const y=b.getFullYear(),m=b.getMonth(),n=new Date(y,m+1,0).getDate(),td=ymd(new Date()),sel=S.cd||td,bud=S.budget*60;
@@ -285,12 +328,12 @@ calendar(){
  for(let d=1;d<=n;d++){const k=y+'-'+pad(m+1)+'-'+pad(d),ts=S.acts.filter(a=>onDay(a,k)),l=load(k),w=l>bud?'w2':l>bud*.8?'w1':'',cs=[...new Set(ts.map(a=>orgCol(a.org)))].slice(0,4);
   cells+=`<button class="cd ${k===td?'t':''} ${k===sel?'s':''} ${w}" data-a="cday" data-id="${k}">${d}<i>${cs.map(c=>`<u style="background:${c}"></u>`).join('')}</i></button>`}
  const ts=S.acts.filter(a=>onDay(a,sel)),l=load(sel);
- return `<div class="card"><div class="row"><button class="ic" data-a="cmo" data-id="-1">◀</button><b>${b.toLocaleDateString('en-US',{month:'long',year:'numeric'})}</b><button class="ic" data-a="cmo" data-id="1">▶</button></div>
+ return `<div class="card"><div class="row"><button class="ic" data-a="cmo" data-id="-1">${ic('chl',18)}</button><b>${b.toLocaleDateString('en-US',{month:'long',year:'numeric'})}</b><button class="ic" data-a="cmo" data-id="1">${ic('chr',18)}</button></div>
  <div class="cal" style="margin-top:8px">${['S','M','T','W','T','F','S'].map(x=>`<b>${x}</b>`).join('')}${cells}</div><div class="mut" style="margin-top:8px">Dots are organizations. Amber means near your daily budget, red means over it.</div></div>
- <div class="row"><h3>${new Date(sel+'T00:00').toLocaleDateString('en-US',{weekday:'long',month:'short',day:'numeric'})}</h3><span class="mut">${hm(l)} of ${hm(bud)}${l>bud?' ⚠ over':''}</span></div>
+ <div class="row"><h3>${new Date(sel+'T00:00').toLocaleDateString('en-US',{weekday:'long',month:'short',day:'numeric'})}</h3><span class="mut">${hm(l)} of ${hm(bud)}${l>bud?' · over':''}</span></div>
  ${stale().length?`<button class="btn g w" style="margin-bottom:10px" data-a="rollall">Move ${stale().length} unfinished to tomorrow</button>`:''}
  ${ts.length?ts.map(t=>taskRow(t,true)).join(''):empty('Nothing scheduled this day. Tap + to add a task.')}`},
-menu(){return `<div class="grid">${TABS.filter(t=>XT.includes(t[0])).map(([k,i,l])=>`<button class="card" style="font:inherit;color:var(--tx);cursor:pointer;margin:0;text-align:center" data-a="tab" data-id="${k}"><div style="font-size:30px">${i}</div><b>${l==='Help'?'Help & Settings':l}</b></button>`).join('')}</div>`},
+menu(){return `<div class="grid">${TABS.filter(t=>XT.includes(t[0])).map(([k,i,l])=>`<button class="card" style="font:inherit;color:var(--tx);cursor:pointer;margin:0;text-align:center" data-a="tab" data-id="${k}"><div>${ic(i,26)}</div><b>${l==='Help'?'Help & Settings':l}</b></button>`).join('')}</div>`},
 more(){
  const tabs=`<div class="seg"><button class="${S.sub==='help'?'on':''}" data-a="sub" data-id="help">Help</button><button class="${S.sub==='settings'?'on':''}" data-a="sub" data-id="settings">Settings</button></div>`;
  if(S.sub==='settings'){
@@ -299,38 +342,38 @@ more(){
   <div class="card"><b>Text size and contrast</b><div class="seg" style="margin-top:8px">${[['0.9','Small'],['1','Normal'],['1.15','Large'],['1.3','Extra']].map(([v,l])=>`<button class="${String(S.fs)===v?'on':''}" data-a="fs" data-id="${v}">${l}</button>`).join('')}</div><label style="display:flex;gap:8px;align-items:center;margin-top:10px;color:var(--tx);font-size:14px"><input type="checkbox" style="width:auto;margin:0" data-c="hi" ${S.hi?'checked':''}>Higher contrast</label></div>
   <div class="card"><b>Daily time budget (hours)</b><input type="number" min="1" max="16" step="0.5" value="${S.budget}" data-c="budget"><div class="mut">Used by the "Today's load" bar in the Planner.</div></div>
   <div class="card"><b>Alerts</b><div class="mut" style="margin:6px 0 10px">Pulse can show alerts for due times and finished estimates, but only while the app is open or recently open.</div>
-  ${np==='default'?'<button class="btn" data-a="notif">Enable alerts</button>':np==='granted'?'<div>✅ Alerts are on</div>':np==='denied'?'<div class="mut">Blocked. Allow notifications for this site in your browser settings.</div>':'<div class="mut">Not available here. On iPhone, add Pulse to the Home Screen first.</div>'}</div>
+  ${np==='default'?'<button class="btn" data-a="notif">Enable alerts</button>':np==='granted'?'<div>Alerts are on</div>':np==='denied'?'<div class="mut">Blocked. Allow notifications for this site in your browser settings.</div>':'<div class="mut">Not available here. On iPhone, add Pulse to the Home Screen first.</div>'}</div>
   <div class="card"><b>App lock (PIN)</b><div class="mut" style="margin:6px 0 10px">Asks for a PIN when you open Pulse or return after a minute away. It keeps casual snoopers out but is not encryption.</div>
-  ${S.pin?'<div style="margin-bottom:10px">🔒 PIN is on</div><button class="btn g" data-a="rmpin">Remove PIN</button>':'<input id="npin" type="password" inputmode="numeric" maxlength="8" placeholder="Choose 4 to 8 digits"><button class="btn" data-a="setpin">Set PIN</button>'}</div>
+  ${S.pin?'<div style="margin-bottom:10px">PIN is on</div><button class="btn g" data-a="rmpin">Remove PIN</button>':'<input id="npin" type="password" inputmode="numeric" maxlength="8" placeholder="Choose 4 to 8 digits"><button class="btn" data-a="setpin">Set PIN</button>'}</div>
   <div class="card"><b>Backup and move between devices</b><div class="mut" style="margin:4px 0 10px">Export a file, send it to your other device, and import it there. Import only adds items that device is missing.</div>
-  <div class="grid" style="gap:8px"><button class="btn" data-a="export">⬇ Export backup</button><label class="btn" style="text-align:center;margin:0;color:#fff;font-size:15px">⬆ Import backup<input type="file" accept=".json,application/json" data-c="import" hidden></label></div></div>
-  <div class="card"><button class="btn g w" data-a="intro">▶ Replay intro</button><div class="mut" style="text-align:center;margin-top:10px">Pulse · version 9 · your data stays on this device</div></div>`}
+  <div class="grid" style="gap:8px"><button class="btn" data-a="export">Export backup</button><label class="btn" style="text-align:center;margin:0;color:#fff;font-size:15px">Import backup<input type="file" accept=".json,application/json" data-c="import" hidden></label></div></div>
+  <div class="card"><button class="btn g w" data-a="intro">▶ Replay intro</button><div class="mut" style="text-align:center;margin-top:10px">Pulse · version 11 · your data stays on this device</div></div>`}
  const H=(t,b)=>`<details><summary>${t}</summary>${b}</details>`;
  return tabs+`<div class="card"><b>Welcome to Pulse</b><p class="mut" style="font-size:14px">Pulse helps you capture tasks, plan your day, time your work, track what you've handed off, and rest when you need to. Tap a section below to learn what each part does.</p></div>`+
- H('💓 About Pulse','<p>A pulse is the rhythm that shows a body is working well: it rises with effort and settles with rest. Pulse tracks that rhythm in your work. The letters stand for <b>P</b>lan, <b>U</b>nderstand, <b>L</b>og, <b>S</b>ustain and <b>E</b>valuate: plan with the Planner and Calendar, understand your time in Stats, log work with timers and the journal, sustain your energy with Burnout Buffer and mood check-ins, and evaluate with the weekly review.</p>')+H('🏠 Home','<p>Your day at a glance: a progress ring for today, reminders for overdue and due-today items, a quick energy check-in, totals, and your top five tasks. Tap the ⚪ circle to finish a task.</p>')+
- H('📥 Inbox','<p>A fast place to dump anything on your mind. Later, assign each item to an organization or tap <b>To planner</b> to turn it into a real task.</p>')+
- H('📅 Planner','<ul><li><b>Estimate:</b> enter hours and minutes, or tap a quick button like 1h 30m.</li><li><b>Due date and time:</b> optional. Tasks are sorted with the most urgent first and tagged Overdue or Today.</li><li><b>Repeat:</b> daily, weekly or monthly tasks create the next one when you finish them.</li><li><b>▶ Timer:</b> logs real time spent. <b>Focus</b> opens a full-screen timer.</li><li><b>✏️ Edit, 📅 calendar, 🗑 delete:</b> delete can be undone for a few seconds.</li><li><b>Today\'s load:</b> shows planned time against your daily budget.</li><li><b>Search and filter</b> by words or organization.</li></ul>')+
- H('👥 Delegate','<p>Track tasks you handed to someone else, with a follow-up date. Overdue follow-ups show on Home. Mark them Resolved when done.</p>')+
- H('💼 Orgs','<p>Add the groups or roles you work for. Give an organization a weekly hour goal to see your progress over the last 7 days.</p>')+
- H('📊 Stats','<p>A weekly review (wins, overdue, waiting, energy), how your estimates compare with real time, a donut of time by task type, a 7-day chart, and time by organization.</p>')+
- H('🗓 Calendar and work days','<ul><li>The Calendar shows a month. Dots are organization colors. Tap a day to see its tasks.</li><li>In a task, pick <b>Work days</b> to choose when you will do it. Its estimate is split evenly across those days.</li><li>Days turn amber near your daily budget and red when over it.</li><li><b>Move unfinished to tomorrow</b> reschedules anything you missed.</li></ul>')+H('⚡ Quick add and tasks','<p>Type a sentence in the Planner, like <i>Call Maria tomorrow 3pm 30m #finance !high</i>. Pulse fills in the date, time, estimate, organization and priority. Tap ＋ for the full form, ⋯ on a task for more actions, and add subtasks one per line. Completed tasks are hidden by default.</p><p><b>Templates:</b> tap ⋯ → 💾 Template on any task to save it. Saving another task under the same name builds a set, and Add creates the whole set in one tap.</p><p><b>On a computer:</b> N new task, / search, C calendar, H home, ? help.</p>')+H('📓 Journal','<p>An end-of-day brain dump you can type or dictate with 🎙. Pulse sorts sentences into Wins and Next steps using keywords. This is simple matching on your device, not AI.</p>')+
- H('💗 Burnout Buffer','<p>Tap the 🌙 button (top right on phones, bottom of any page, or the side menu on desktop). Pulse dims to a dark, low-color screen, shows only your High-priority tasks, hides charts and totals, quiets alerts and badges, and offers a slow breathing circle. Turn it off the same way.</p>')+
- H('🔔 Reminders','<ul><li>Overdue and due-today items appear on Home and as a number badge on the app icon (on supported phones, updated when you open the app).</li><li>The 📅 button adds a task to your phone calendar, which sends the alert even when Pulse is closed. This is the most reliable reminder.</li><li>Under Settings you can enable alerts that show while Pulse is open.</li><li>A web app cannot reliably wake itself up in the background, so Pulse cannot promise alerts while closed.</li></ul>')+
- H('😊 Energy check-in','<p>Tap how you feel once a day. After three low check-ins in a row, Pulse suggests Burnout Buffer. Your last 7 days appear in the weekly review.</p>')+
- H('💾 Backup and devices','<p>Your data lives only in this browser on this device. Export a backup regularly, and use it to move to another device or recover after clearing browser data. Pulse reminds you after a week.</p>')+
- H('🔒 PIN lock','<p>Set a PIN under Settings. If you forget it, the only way back in is clearing this site\'s data, which erases everything not backed up. Export a backup first.</p>')+
- H('📲 Install and offline','<p>Open the site once while online, then use Add to Home Screen. After that Pulse opens without a signal.</p>');
+ H('About Pulse','<p>A pulse is the rhythm that shows a body is working well: it rises with effort and settles with rest. Pulse tracks that rhythm in your work. The letters stand for <b>P</b>lan, <b>U</b>nderstand, <b>L</b>og, <b>S</b>ustain and <b>E</b>valuate: plan with the Planner and Calendar, understand your time in Stats, log work with timers and the journal, sustain your energy with Burnout Buffer and mood check-ins, and evaluate with the weekly review.</p>')+H('Home','<p>Your day at a glance: a progress ring for today, reminders for overdue and due-today items, a quick energy check-in, totals, and your top five tasks. Tap the circle to finish a task.</p>')+
+ H('Inbox','<p>A fast place to dump anything on your mind. Later, assign each item to an organization or tap <b>To planner</b> to turn it into a real task.</p>')+
+ H('Planner','<ul><li><b>Estimate:</b> enter hours and minutes, or tap a quick button like 1h 30m.</li><li><b>Due date and time:</b> optional. Tasks are sorted with the most urgent first and tagged Overdue or Today.</li><li><b>Repeat:</b> daily, weekly or monthly tasks create the next one when you finish them.</li><li><b>▶ Timer:</b> logs real time spent. <b>Focus</b> opens a full-screen timer.</li><li><b>Edit, calendar, delete:</b> delete can be undone for a few seconds.</li><li><b>Today\'s load:</b> shows planned time against your daily budget.</li><li><b>Search and filter</b> by words or organization.</li></ul>')+
+ H('Delegate','<p>Track tasks you handed to someone else, with a follow-up date. Overdue follow-ups show on Home. Mark them Resolved when done.</p>')+
+ H('Orgs','<p>Add the groups or roles you work for. Give an organization a weekly hour goal to see your progress over the last 7 days.</p>')+
+ H('Stats','<p>A weekly review (wins, overdue, waiting, energy), how your estimates compare with real time, a donut of time by task type, a 7-day chart, and time by organization.</p>')+
+ H('Calendar and work days','<ul><li>The Calendar shows a month. Dots are organization colors. Tap a day to see its tasks.</li><li>In a task, pick <b>Work days</b> to choose when you will do it. Its estimate is split evenly across those days.</li><li>Days turn amber near your daily budget and red when over it.</li><li><b>Move unfinished to tomorrow</b> reschedules anything you missed.</li></ul>')+H('Quick add and tasks','<p>Type a sentence in the Planner, like <i>Call Maria tomorrow 3pm 30m #finance !high</i>. Pulse fills in the date, time, estimate, organization and priority. Tap ＋ for the full form, the three-dot menu on a task for more actions, and add subtasks one per line. Completed tasks are hidden by default.</p><p><b>Templates:</b> tap the three-dot menu → Template on any task to save it. Saving another task under the same name builds a set, and Add creates the whole set in one tap.</p><p><b>On a computer:</b> N new task, / search, C calendar, H home, ? help.</p>')+H('Journal','<p>An end-of-day brain dump you can type or dictate with the mic button. Pulse sorts sentences into Wins and Next steps using keywords. This is simple matching on your device, not AI.</p>')+
+ H('Burnout Buffer','<p>Tap the moon button (top right on phones, bottom of any page, or the side menu on desktop). Pulse dims to a dark, low-color screen, shows only your High-priority tasks, hides charts and totals, quiets alerts and badges, and offers a slow breathing circle. Turn it off the same way.</p>')+
+ H('Reminders','<ul><li>Overdue and due-today items appear on Home and as a number badge on the app icon (on supported phones, updated when you open the app).</li><li>The calendar button adds a task to your phone calendar, which sends the alert even when Pulse is closed. This is the most reliable reminder.</li><li>Under Settings you can enable alerts that show while Pulse is open.</li><li>A web app cannot reliably wake itself up in the background, so Pulse cannot promise alerts while closed.</li></ul>')+
+ H('Energy check-in','<p>Tap how you feel once a day. After three low check-ins in a row, Pulse suggests Burnout Buffer. Your last 7 days appear in the weekly review.</p>')+
+ H('Backup and devices','<p>Your data lives only in this browser on this device. Export a backup regularly, and use it to move to another device or recover after clearing browser data. Pulse reminds you after a week.</p>')+
+ H('PIN lock','<p>Set a PIN under Settings. If you forget it, the only way back in is clearing this site\'s data, which erases everything not backed up. Export a backup first.</p>')+
+ H('Install and offline','<p>Open the site once while online, then use Add to Home Screen. After that Pulse opens without a signal.</p>');
 }};
 
 /* ---- render ---- */
 function render(){
  document.body.classList.toggle('burn',S.burn);
  document.documentElement.dataset.theme=S.theme;document.body.style.setProperty('--fs',S.fs||1);document.body.classList.toggle('hi',!!S.hi);
- $('#nav').innerHTML=TABS.map(([k,i,l])=>`<button class="${S.tab===k||(k==='menu'&&XT.includes(S.tab))?'on':''} ${XT.includes(k)?'x':''} ${k==='menu'?'mo':''}" data-a="tab" data-id="${k}"><b>${i}</b>${l}</button>`).join('');
+ $('#nav').innerHTML=TABS.map(([k,i,l])=>`<button class="${S.tab===k||(k==='menu'&&XT.includes(S.tab))?'on':''} ${XT.includes(k)?'x':''} ${k==='menu'?'mo':''}" data-a="tab" data-id="${k}"><b>${ic(i,22)}</b><span>${l}</span></button>`).join('');
  const t=TABS.find(x=>x[0]===S.tab),title=t[2]==='Home'?'Dashboard':t[2]==='Help'?'Help & Settings':t[2];
- $('#m').innerHTML=`<header class="hd"><div><h2>${title}</h2><div class="sub">${new Date().toLocaleDateString('en-US',{weekday:'long',month:'long',day:'numeric'})}</div></div><div class="hb"><button class="ic" data-a="help" title="Help">❓</button><button class="ic mob" data-a="burn" title="Burnout Buffer">${S.burn?'💗':'🌙'}</button></div></header>
- ${S.burn?`<div class="ban"><b>☕ Recovery mode</b><p style="margin:6px 0 0;font-size:14px">${msg()}</p></div>`:''}
- ${timerBar()}${V[S.tab]()}<button class="burnbtn" data-a="burn">${S.burn?'💗 Burnout Buffer is ON. Tap to turn off':'🌙 Activate Burnout Buffer'}</button>${['dashboard','planner','calendar'].includes(S.tab)&&!S.edit?'<button class="btn fab" data-a="add">＋</button>':''}`;
+ $('#m').innerHTML=`<header class="hd"><div><h2>${title}</h2><div class="sub">${new Date().toLocaleDateString('en-US',{weekday:'long',month:'long',day:'numeric'})}</div></div><div class="hb"><button class="ic" data-a="help" title="Help">${ic('help',20)}</button><button class="ic mob" data-a="burn" title="Burnout Buffer">${ic(S.burn?'heart':'moon',20)}</button></div></header>
+ ${S.burn?`<div class="ban"><b>Recovery mode</b><p style="margin:6px 0 0;font-size:14px">${msg()}</p></div>`:''}
+ ${timerBar()}${V[S.tab]()}${['dashboard','planner','calendar'].includes(S.tab)&&!S.edit?'<button class="btn fab" data-a="add" aria-label="New task">'+ic('plus',22)+'</button>':''}`;
  const f=$('#focus');
  if(S.focus&&S.timer){const k=S.acts.find(a=>a.id===S.timer.id);f.style.display='flex';
   f.innerHTML=`<div class="mut">Focus</div><h2 style="margin:0">${esc(k?k.title:'')}</h2><div class="tm" style="font-size:64px;font-weight:700">${fmt(Math.floor((Date.now()-S.timer.start)/1000))}</div><div class="mut">Estimate ${hm((k&&k.dur)||30)}</div><div style="display:flex;gap:10px"><button class="btn" data-a="timer" data-id="${S.timer.id}">Stop &amp; save</button><button class="btn g" data-a="unfocus">Minimize</button></div>`}
@@ -359,7 +402,7 @@ const A={
  burn:()=>{S.burn=!S.burn;msgI++},
  toggle:i=>{const t=S.acts.find(a=>a.id===i),was=t.status==='Completed';t.status=was?'Pending':'Completed';t.doneAt=was?null:Date.now();
   if(!was&&S.timer&&S.timer.id===i)stopTimer();
-  if(!was&&t.rep&&!t.deleg){S.acts.unshift({...t,id:id(),status:'Pending',actual:0,doneAt:null,created:Date.now(),due:nextDue(t)});toast('🔁 Next '+t.rep+' task created')}},
+  if(!was&&t.rep&&!t.deleg){S.acts.unshift({...t,id:id(),status:'Pending',actual:0,doneAt:null,created:Date.now(),due:nextDue(t)});toast('Next '+t.rep+' task created')}},
  del:i=>{if(S.timer&&S.timer.id===i){S.timer=null;S.focus=false}rm('acts',i,'Task')},
  plan:i=>{const t=S.acts.find(a=>a.id===i);t.triage=false;t.dur=t.dur||30;t.type=t.type||'Deep Work'},
  timer:i=>{const same=S.timer&&S.timer.id===i;stopTimer();if(!same)S.timer={id:i,start:Date.now()}},
@@ -383,10 +426,10 @@ const A={
  savej:()=>{const v=($('#jt')||{}).value||S.jt;if(!v.trim())return;S.jours.unshift({id:id(),text:v.trim(),at:Date.now()});S.jt=''},
  delj:i=>rm('jours',i,'Entry'),
  mic:()=>{const R=window.SpeechRecognition||window.webkitSpeechRecognition;if(!R){alert('Voice input is not supported in this browser.');return 'skip'}
-  if(window.rec){window.rec.stop();window.rec=null;$('#mic').textContent='🎙';return 'skip'}
+  if(window.rec){window.rec.stop();window.rec=null;$('#mic').innerHTML=ic('mic',18);return 'skip'}
   const r=window.rec=new R();r.continuous=true;r.interimResults=false;
   r.onresult=e=>{for(let i=e.resultIndex;i<e.results.length;i++)if(e.results[i].isFinal){S.jt+=e.results[i][0].transcript+' ';const t=$('#jt');if(t)t.value=S.jt;save()}};
-  r.onend=()=>{window.rec=null;const m=$('#mic');if(m)m.textContent='🎙'};r.start();$('#mic').textContent='🔴';return 'skip'}
+  r.onend=()=>{window.rec=null;const m=$('#mic');if(m)m.innerHTML=ic('mic',18)};r.start();$('#mic').innerHTML=ic('stop',18);return 'skip'}
 };
 const F={
  triage:d=>S.acts.unshift({id:id(),title:d.get('t').trim(),pri:'Medium',dur:30,type:'Deep Work',status:'Pending',triage:true,created:Date.now()}),
@@ -444,9 +487,9 @@ setInterval(()=>{
 setInterval(()=>{
  let ch=false;
  S.acts.forEach(a=>{const d=dueOf(a);if(!d||d.length<=10||a.status==='Completed'||a.triage)return;const k=a.id+d;
-  if(!S.notified[k]&&new Date(d).getTime()<=Date.now()){S.notified[k]=1;ch=true;notify('Pulse reminder',(a.deleg?'Follow up: ':'Due: ')+a.title);if(!S.burn)toast('⏰ '+a.title+' is due')}});
+  if(!S.notified[k]&&new Date(d).getTime()<=Date.now()){S.notified[k]=1;ch=true;notify('Pulse reminder',(a.deleg?'Follow up: ':'Due: ')+a.title);if(!S.burn)toast(a.title+' is due')}});
  if(S.timer&&!S.timer.alerted){const t=S.acts.find(a=>a.id===S.timer.id);
-  if(t&&t.dur&&Date.now()-S.timer.start>=t.dur*60000){S.timer.alerted=1;ch=true;notify('Estimate reached',t.title+': '+hm(t.dur)+' is up');toast('⏱ Estimate reached: '+t.title)}}
+  if(t&&t.dur&&Date.now()-S.timer.start>=t.dur*60000){S.timer.alerted=1;ch=true;notify('Estimate reached',t.title+': '+hm(t.dur)+' is up');toast('Estimate reached: '+t.title)}}
  if(ch){save();if(!/INPUT|TEXTAREA|SELECT/.test((document.activeElement||{}).tagName||''))render()}
 },30000);
 
