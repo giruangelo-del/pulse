@@ -1,4 +1,4 @@
-const CACHE = 'pulse-v12'; // bump (v6, v7...) whenever you update any file
+const CACHE = 'pulse-v13'; // bump (v6, v7...) whenever you update any file
 const FILES = ['./', './index.html', './manifest.json', './icon-192.png', './icon-512.png'];
 
 self.addEventListener('install', e => {
