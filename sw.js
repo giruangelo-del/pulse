@@ -1,4 +1,4 @@
-const CACHE = 'pulse-v14'; // bump (v6, v7...) whenever you update any file
+const CACHE = 'pulse-v19'; // bump (v6, v7...) whenever you update any file
 const FILES = ['./', './index.html', './manifest.json', './icon-192.png', './icon-512.png'];
 
 self.addEventListener('install', e => {
@@ -13,7 +13,12 @@ self.addEventListener('activate', e => {
 });
 
 self.addEventListener('fetch', e => {
-  e.respondWith(caches.match(e.request).then(r => r || fetch(e.request)));
+  const h = new URL(e.request.url).hostname;
+  if (h.endsWith('googleapis.com') || h.endsWith('gstatic.com')) {
+    e.respondWith(caches.open(CACHE).then(c => fetch(e.request).then(r => { c.put(e.request, r.clone()); return r; }).catch(() => c.match(e.request))));
+    return;
+  }
+  e.respondWith(caches.match(e.request, { ignoreSearch: true }).then(r => r || fetch(e.request)));
 });
 
 self.addEventListener('notificationclick', e => {
